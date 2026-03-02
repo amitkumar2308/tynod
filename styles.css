@@ -1097,7 +1097,7 @@ a {
 }
 
 .stat-item p {
-    text-align: left;
+    text-align: center;
     font-size: 0.9375rem;
     color: var(--gray-500);
     margin-bottom: 0;
@@ -3928,7 +3928,7 @@ a {
     }
 
     .stat-item p {
-        text-align: left;
+        text-align: center;
         font-size: 0.875rem;
     }
 
