@@ -266,7 +266,9 @@ body {
 }
 
 .cap-hero p {
+    text-align: left;
     color: rgba(255, 255, 255, 0.8);
+    word-spacing: -0.5px;
     font-size: 1.125rem;
     line-height: 1.8;
     margin-bottom: 2rem;
@@ -302,86 +304,6 @@ body {
     margin-top: 0.25rem;
 }
 
-/* ---- Client Carousel Section ---- */
-.cap-client-carousel {
-    padding: 3rem 0;
-    background: #ffffff;
-    border-bottom: 1px solid var(--gray-200);
-    overflow: hidden;
-}
-
-.carousel-title {
-    text-align: center;
-    font-size: 1.25rem;
-    color: var(--gray-500);
-    margin-bottom: 2rem;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.05em;
-}
-
-.carousel-wrapper {
-    position: relative;
-    width: 100%;
-    overflow: hidden;
-}
-
-.carousel-wrapper::before,
-.carousel-wrapper::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    width: 15rem;
-    height: 100%;
-    z-index: 2;
-    pointer-events: none;
-}
-
-.carousel-wrapper::before {
-    left: 0;
-    background: linear-gradient(to right, #ffffff, transparent);
-}
-
-.carousel-wrapper::after {
-    right: 0;
-    background: linear-gradient(to left, #ffffff, transparent);
-}
-
-.carousel-track {
-    display: flex;
-    align-items: center;
-    gap: 4rem;
-    width: max-content;
-    animation: scrollCarousel 35s linear infinite;
-}
-
-.carousel-track:hover {
-    animation-play-state: paused;
-}
-
-.carousel-track img {
-    height: 70px;
-    width: auto;
-    object-fit: contain;
-    filter: grayscale(100%) opacity(0.8);
-    transition: all 0.3s ease;
-    cursor: pointer;
-}
-
-.carousel-track img:hover {
-    filter: grayscale(0%) opacity(1);
-    transform: scale(1.05);
-}
-
-@keyframes scrollCarousel {
-    0% {
-        transform: translateX(0);
-    }
-
-    100% {
-        transform: translateX(calc(-50% - 2rem));
-    }
-}
 
 /* ---- Tabs Section ---- */
 .cap-tabs-section {
@@ -513,13 +435,36 @@ body {
     }
 }
 
-.cap-category-header {
+.cap-category-banner {
     display: flex;
     align-items: center;
-    gap: 1.25rem;
+    justify-content: space-between;
+    gap: 2rem;
+    background: #ffffff;
+    border-radius: var(--radius-lg);
+    padding: 2.5rem;
     margin-bottom: 2.5rem;
-    padding-bottom: 1.5rem;
-    border-bottom: 2px solid var(--gray-200);
+    box-shadow: 0 10px 40px rgba(15, 23, 42, 0.06);
+    border: 1px solid var(--gray-200);
+    position: relative;
+    overflow: hidden;
+}
+
+.cap-category-banner::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: var(--gradient-primary);
+}
+
+.cap-category-banner-content {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex: 1;
 }
 
 .cap-category-icon {
@@ -539,16 +484,38 @@ body {
     color: #ffffff;
 }
 
-.cap-category-header h2 {
+.cap-category-banner-content h2 {
     font-size: 1.75rem;
     margin-bottom: 0.25rem;
     color: var(--gray-900);
+    font-weight: 700;
 }
 
-.cap-category-header p {
+.cap-category-banner-content p {
+    text-align: left;
     font-size: 1rem;
+    word-spacing: -0.5px;
     color: var(--gray-500);
     margin-bottom: 0;
+}
+
+.cap-category-banner-image {
+    flex: 0 0 320px;
+    height: 180px;
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
+}
+
+.cap-category-banner-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.cap-category-banner:hover .cap-category-banner-image img {
+    transform: scale(1.05);
 }
 
 /* ---- Capability Cards ---- */
@@ -633,7 +600,9 @@ body {
 }
 
 .cap-card p {
+    text-align: left;
     font-size: 0.9375rem;
+    word-spacing: -0.5px;
     color: var(--gray-600);
     line-height: 1.7;
     margin-bottom: 0;
@@ -702,7 +671,9 @@ body {
 }
 
 .cap-cta p {
+    text-align: center;
     color: rgba(255, 255, 255, 0.75);
+    word-spacing: -0.5px;
     font-size: 1.0625rem;
     line-height: 1.8;
     margin-bottom: 2rem;
@@ -833,10 +804,22 @@ body {
         padding: 1.25rem;
     }
 
-    .cap-category-header {
+    .cap-category-banner {
         flex-direction: column;
-        align-items: flex-start;
-        gap: 1rem;
+        text-align: center;
+        padding: 1.5rem;
+        gap: 1.5rem;
+    }
+
+    .cap-category-banner-content {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .cap-category-banner-image {
+        flex: auto;
+        width: 100%;
+        height: 200px;
     }
 
     .cap-category-icon {
@@ -848,7 +831,7 @@ body {
         font-size: 1.125rem;
     }
 
-    .cap-category-header h2 {
+    .cap-category-banner-content h2 {
         font-size: 1.375rem;
     }
 
@@ -880,7 +863,9 @@ body {
     }
 
     .cap-hero p {
+        text-align: left;
         font-size: 1rem;
+        word-spacing: -0.5px;
     }
 
     .cap-hero-stats {
