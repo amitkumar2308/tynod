@@ -502,6 +502,7 @@ a {
 }
 
 .anniversary-content p {
+    text-align: center;
     margin: 0;
     color: var(--white);
     font-size: 0.875rem;
@@ -1004,6 +1005,7 @@ a {
 }
 
 .cta-banner-content p {
+    text-align: left;
     margin: 0;
     font-size: 1.125rem;
     font-weight: 400;
@@ -1095,6 +1097,7 @@ a {
 }
 
 .stat-item p {
+    text-align: left;
     font-size: 0.9375rem;
     color: var(--gray-500);
     margin-bottom: 0;
@@ -1370,6 +1373,7 @@ a {
 }
 
 .mv-v2-body p {
+    text-align: left;
     font-size: 0.9375rem;
     color: rgba(255, 255, 255, 0.65);
     line-height: 1.7;
@@ -1453,17 +1457,17 @@ a {
     cursor: grabbing;
 }
 
-/* Cards - Premium Split Layout */
+/* Cards - Premium Stacked Layout */
 .adv-card {
-    min-width: calc(33.333% - 1rem);
-    max-width: calc(33.333% - 1rem);
+    min-width: 380px;
+    max-width: 380px;
     border-radius: 1.25rem;
     position: relative;
     overflow: hidden;
     flex-shrink: 0;
     transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1), box-shadow 0.4s ease;
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     box-shadow: 0 4px 24px rgba(0, 0, 0, 0.08);
 }
 
@@ -1474,7 +1478,7 @@ a {
 
 .adv-card-text {
     flex: 1;
-    padding: 1.25rem 1rem 1.25rem 1.25rem;
+    padding: 1rem 1.5rem 1.5rem;
     position: relative;
     display: flex;
     flex-direction: column;
@@ -1483,8 +1487,8 @@ a {
 }
 
 .adv-card-img {
-    width: 35%;
-    min-height: 100%;
+    width: 100%;
+    height: 200px;
     overflow: hidden;
     position: relative;
     flex-shrink: 0;
@@ -1494,7 +1498,7 @@ a {
     content: '';
     position: absolute;
     inset: 0;
-    background: linear-gradient(90deg, rgba(0, 0, 0, 0.15) 0%, transparent 100%);
+    background: linear-gradient(180deg, transparent 40%, rgba(0, 0, 0, 0.3) 100%);
     z-index: 1;
 }
 
@@ -1513,9 +1517,9 @@ a {
 /* Floating Number Watermark */
 .adv-card-num {
     position: absolute;
-    bottom: 0.25rem;
-    right: 0.5rem;
-    font-size: 3.5rem;
+    bottom: 0.5rem;
+    right: 0.75rem;
+    font-size: 4rem;
     font-weight: 900;
     opacity: 0.06;
     line-height: 1;
@@ -1524,17 +1528,21 @@ a {
     z-index: 1;
 }
 
-/* Icon Badge */
+/* Icon Badge - overlaps image */
 .adv-card-icon {
-    width: 32px;
-    height: 32px;
-    border-radius: 8px;
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
     display: flex;
     align-items: center;
     justify-content: center;
-    font-size: 0.8rem;
-    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    margin-top: -20px;
+    margin-bottom: 0.75rem;
     backdrop-filter: blur(8px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    position: relative;
+    z-index: 3;
 }
 
 .adv-card h4 {
@@ -1553,9 +1561,9 @@ a {
 
 .adv-list li {
     position: relative;
-    padding: 0.125rem 0 0.125rem 0.875rem;
-    font-size: 0.625rem;
-    line-height: 1.4;
+    padding: 0.2rem 0 0.2rem 1rem;
+    font-size: 0.75rem;
+    line-height: 1.5;
     font-weight: 400;
 }
 
@@ -1563,9 +1571,9 @@ a {
     content: '';
     position: absolute;
     left: 0;
-    top: 0.4rem;
-    width: 4px;
-    height: 4px;
+    top: 0.55rem;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
 }
 
@@ -1796,6 +1804,7 @@ a {
 }
 
 .cv-card p {
+    text-align: center;
     font-size: 0.875rem;
     color: var(--gray-500);
     line-height: 1.65;
@@ -1857,6 +1866,7 @@ a {
 }
 
 .coc-card p {
+    text-align: left;
     font-size: 0.8125rem;
     color: var(--gray-500);
     line-height: 1.6;
@@ -2083,6 +2093,7 @@ a {
 }
 
 .value-card p {
+    text-align: left;
     font-size: 0.9375rem;
     color: var(--gray-500);
     line-height: 1.7;
@@ -2199,6 +2210,7 @@ a {
 }
 
 .ceo-quote p {
+    text-align: left;
     color: rgba(255, 255, 255, 0.85);
     font-size: 1rem;
     line-height: 1.9;
@@ -2410,6 +2422,7 @@ a {
 }
 
 .author-info p {
+    text-align: left;
     font-size: 0.9375rem;
     color: var(--gray-600);
     margin-bottom: 0;
@@ -2903,6 +2916,7 @@ a {
 }
 
 .footer-col p {
+    text-align: left;
     color: var(--gray-400);
     font-size: 0.9375rem;
     line-height: 1.7;
@@ -2969,6 +2983,7 @@ a {
 }
 
 .footer-bottom p {
+    text-align: left;
     color: var(--gray-500);
     margin-bottom: 0;
     font-size: 0.875rem;
@@ -3134,6 +3149,7 @@ a {
     }
 
     .cta-banner-content p {
+        text-align: left;
         font-size: 1.125rem;
     }
 
@@ -3478,6 +3494,7 @@ a {
     }
 
     .cta-banner-content p {
+        text-align: left;
         font-size: 0.9375rem;
         line-height: 1.5;
     }
@@ -3495,6 +3512,7 @@ a {
     }
 
     .anniversary-content p {
+        text-align: left;
         font-size: 0.75rem;
     }
 
@@ -3528,6 +3546,7 @@ a {
     }
 
     .stat-item p {
+        text-align: left;
         font-size: 0.9375rem;
     }
 
@@ -3584,6 +3603,7 @@ a {
     }
 
     .service-card p {
+        text-align: left;
         font-size: 0.875rem;
     }
 
@@ -3642,6 +3662,7 @@ a {
     }
 
     .cv-card p {
+        text-align: center;
         font-size: 0.8125rem;
     }
 
@@ -3683,6 +3704,7 @@ a {
     }
 
     .ceo-quote p {
+        text-align: left;
         font-size: 0.9375rem;
     }
 
@@ -3745,6 +3767,7 @@ a {
     }
 
     .author-info p {
+        text-align: left;
         font-size: 0.8125rem;
     }
 
@@ -3905,6 +3928,7 @@ a {
     }
 
     .stat-item p {
+        text-align: left;
         font-size: 0.875rem;
     }
 
