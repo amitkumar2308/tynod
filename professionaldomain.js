@@ -2,6 +2,34 @@
 //  Capabilities Page - Interactive JS
 // ===================================
 
+// --- Category Navigation via Left/Right Arrows ---
+function navigateCategory(direction) {
+    const tabs = document.querySelectorAll('.cap-tab');
+    if (!tabs.length) return;
+
+    // Find the currently active tab index
+    let activeIndex = 0;
+    tabs.forEach((tab, index) => {
+        if (tab.classList.contains('active')) {
+            activeIndex = index;
+        }
+    });
+
+    // Calculate new index with wrapping
+    let newIndex = activeIndex + direction;
+    if (newIndex < 0) newIndex = tabs.length - 1;
+    if (newIndex >= tabs.length) newIndex = 0;
+
+    // Click the new tab to trigger the switch
+    tabs[newIndex].click();
+
+    // Scroll the tab into view in the tabs wrapper
+    const tabsWrapper = document.getElementById('capTabsWrapper');
+    if (tabsWrapper) {
+        tabs[newIndex].scrollIntoView({ behavior: 'smooth', block: 'nearest', inline: 'center' });
+    }
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     // --- Tab Navigation ---
     const tabs = document.querySelectorAll('.cap-tab');

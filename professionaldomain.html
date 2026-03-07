@@ -12,22 +12,34 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <!-- Simple Header with Back Button -->
-    <div class="cap-page-header">
-        <div class="container cap-header-inner">
-            <a href="index.html" class="cap-back-btn">
-                <i class="fas fa-arrow-left"></i>
-                <span>Back to Home</span>
-            </a>
-            <div class="cap-header-logo">
-                <img src="assets/tynodlogo.jpeg" alt="TYNOD Logo">
-                <span>TYNOD</span>
-            </div>
-        </div>
-    </div>
 
-    <!-- Hero Banner -->
-    <section class="cap-hero">
+    <!-- Main Navbar -->
+    <nav class="navbar" id="navbar">
+        <div class="container nav-container">
+            <div class="logo">
+                <a href="index.html" style="display:flex;align-items:center;gap:0.75rem;">
+                    <img src="assets/tynodlogo.jpeg" alt="TYNOD Logo">
+                    <span class="logo-text">TYNOD</span>
+                </a>
+            </div>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html#about" class="nav-link">The Essence of TYNOD</a></li>
+                <li><a href="professionaldomain.html" class="nav-link active">Our Professional Domain</a></li>
+                <li><a href="index.html#advantage" class="nav-link">TYNOD Advantage</a></li>
+                <li><a href="index.html#clients" class="nav-link">We Are Proud to Work With</a></li>
+                <li><a href="index.html#contact" class="nav-link">Contact Us</a></li>
+                <li><a href="index.html#inquiry" class="nav-link cta-link">Post your Inquiry</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero Banner with Tabs -->
+    <section class="cap-hero" id="capabilities">
         <div class="cap-hero-bg">
             <div class="cap-particle"></div>
             <div class="cap-particle"></div>
@@ -40,33 +52,24 @@
             <div class="cap-hero-content">
                 <span class="cap-hero-tag"><i class="fas fa-award"></i> Our Expertise</span>
                 <h1>Signature <span class="gradient-text-gold">Services</span></h1>
-                <p>Comprehensive suite of 90+ Services, consulting, and advisory services empowering businesses to achieve global standards of excellence.</p>
+                <p>Comprehensive suite of 90+ Services, empowering businesses to achieve global standards of excellence.</p>
                 <div class="cap-hero-stats">
                     <div class="cap-hero-stat">
                         <span class="cap-stat-number">90+</span>
                         <span class="cap-stat-label">Services</span>
                     </div>
-                    <div class="cap-hero-stat">
-                        <span class="cap-stat-number">9</span>
-                        <span class="cap-stat-label">Categories</span>
-                    </div>
+                    
                     <div class="cap-hero-stat">
                         <span class="cap-stat-number">100+</span>
-                        <span class="cap-stat-label">Happy Clients</span>
+                        <span class="cap-stat-label">Satisfied Customers</span>
                     </div>
                 </div>
             </div>
         </div>
-    </section>
 
-
-    <!-- Category Tabs Navigation -->
-    <section class="cap-tabs-section" id="capabilities">
-        <div class="container">
-            <div class="cap-tabs-outer">
-                <button class="cap-tabs-arrow cap-tabs-arrow-left" id="tabsArrowLeft">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
+        <!-- Tabs Bar inside Hero -->
+        <div class="cap-hero-tabs-bar">
+            <div class="container">
                 <div class="cap-tabs-wrapper" id="capTabsWrapper">
                     <button class="cap-tab active" data-category="signature">
                         <i class="fas fa-certificate"></i>
@@ -105,12 +108,10 @@
                         <span>VALUE CATALYST</span>
                     </button>
                 </div>
-                <button class="cap-tabs-arrow cap-tabs-arrow-right" id="tabsArrowRight">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
             </div>
         </div>
     </section>
+
 
     <!-- Capabilities Content -->
     <section class="cap-content-section">
@@ -118,17 +119,21 @@
 
             <!-- 1. SIGNATURE CAPABILITIES -->
             <div class="cap-category active" id="cat-signature">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-certificate"></i></div>
-                        <div>
-                            <h2>PLATINUM PORTFOLIO</h2>
-                            <p>International ISO Standards & Management Systems</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-certificate"></i></div>
+                            <div>
+                                <h2>PLATINUM PORTFOLIO</h2>
+                                <p>International ISO Standards & Management Systems</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -216,17 +221,21 @@
 
             <!-- 2. PROFESSIONAL SUITE -->
             <div class="cap-category" id="cat-professional">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-briefcase"></i></div>
-                        <div>
-                            <h2>ENDURING LEGACY</h2>
-                            <p>Specialized Auditing, Compliance & Industry Standards</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-briefcase"></i></div>
+                            <div>
+                                <h2>ENDURING LEGACY</h2>
+                                <p>Specialized Auditing, Compliance & Industry Standards</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image2.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image2.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -306,17 +315,21 @@
 
             <!-- 3. BESPOKE SOLUTIONS -->
             <div class="cap-category" id="cat-bespoke">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-cogs"></i></div>
-                        <div>
-                            <h2>STRATEGIC EDGE</h2>
-                            <p>Tailored Consulting, Auditing & Process Optimization</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-cogs"></i></div>
+                            <div>
+                                <h2>STRATEGIC EDGE</h2>
+                                <p>Tailored Consulting, Auditing & Process Optimization</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image3.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image3.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -396,17 +409,21 @@
 
             <!-- 4. VALUE CREATION OFFERINGS -->
             <div class="cap-category" id="cat-value">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-gem"></i></div>
-                        <div>
-                            <h2>TRANSFORMATION SERVICES</h2>
-                            <p>Manufacturing Excellence, Safety & Quality Tools</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-gem"></i></div>
+                            <div>
+                                <h2>TRANSFORMATION SERVICES</h2>
+                                <p>Manufacturing Excellence, Safety & Quality Tools</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image4.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image4.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -486,17 +503,21 @@
 
             <!-- 5. TRUSTED EXPERTISE -->
             <div class="cap-category" id="cat-trusted">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-shield-alt"></i></div>
-                        <div>
-                            <h2>TRUSTED EXPERTISE</h2>
-                            <p>Risk, Continuity, Compliance & Sustainability Management</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-shield-alt"></i></div>
+                            <div>
+                                <h2>TRUSTED EXPERTISE</h2>
+                                <p>Risk, Continuity, Compliance & Sustainability Management</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image5.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image5.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -584,17 +605,21 @@
 
             <!-- 6. CENTRES OF EXCELLENCE -->
             <div class="cap-category" id="cat-centres">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-star"></i></div>
-                        <div>
-                            <h2>CENTRES OF EXCELLENCE</h2>
-                            <p>Healthcare, Medical Devices & Regulatory Compliance</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-star"></i></div>
+                            <div>
+                                <h2>CENTRES OF EXCELLENCE</h2>
+                                <p>Healthcare, Medical Devices & Regulatory Compliance</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image6.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image6.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -666,17 +691,21 @@
 
             <!-- 7. PREMIER SOLUTIONS -->
             <div class="cap-category" id="cat-premier">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-crown"></i></div>
-                        <div>
-                            <h2>PREMIER SOLUTIONS</h2>
-                            <p>Sustainability, Textile, Trade & Supply Chain Certifications</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-crown"></i></div>
+                            <div>
+                                <h2>PREMIER SOLUTIONS</h2>
+                                <p>Sustainability, Textile, Trade & Supply Chain Certifications</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image7.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image7.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -772,17 +801,21 @@
 
             <!-- 8. ELITE ADVISORY -->
             <div class="cap-category" id="cat-elite">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-chess-king"></i></div>
-                        <div>
-                            <h2>SUSTAINABLE FRAMEWORKS</h2>
-                            <p>ESG, Climate, Sustainability & Social Compliance</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-chess-king"></i></div>
+                            <div>
+                                <h2>SUSTAINABLE FRAMEWORKS</h2>
+                                <p>ESG, Climate, Sustainability & Social Compliance</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image8.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image8.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -870,17 +903,21 @@
 
             <!-- 9. TRANSFORMATION SERVICES -->
             <div class="cap-category" id="cat-transformation">
-                <div class="cap-category-banner">
-                    <div class="cap-category-banner-content">
-                        <div class="cap-category-icon"><i class="fas fa-rocket"></i></div>
-                        <div>
-                            <h2>VALUE CATALYST</h2>
-                            <p>Advanced Certifications, Accreditation & Regulatory Solutions</p>
+                <div class="cap-category-nav-wrapper">
+                    <button class="cap-cat-arrow cap-cat-arrow-left" onclick="navigateCategory(-1)"><i class="fas fa-chevron-left"></i></button>
+                    <div class="cap-category-banner">
+                        <div class="cap-category-banner-content">
+                            <div class="cap-category-icon"><i class="fas fa-rocket"></i></div>
+                            <div>
+                                <h2>VALUE CATALYST</h2>
+                                <p>Advanced Certifications, Accreditation & Regulatory Solutions</p>
+                            </div>
+                        </div>
+                        <div class="cap-category-banner-image">
+                            <img src="assets/domain/image9.png" alt="Category Image">
                         </div>
                     </div>
-                    <div class="cap-category-banner-image">
-                        <img src="assets/domain/image9.png" alt="Category Image">
-                    </div>
+                    <button class="cap-cat-arrow cap-cat-arrow-right" onclick="navigateCategory(1)"><i class="fas fa-chevron-right"></i></button>
                 </div>
                 <div class="cap-cards-grid">
                     <div class="cap-card">
@@ -1060,6 +1097,7 @@
         <i class="fas fa-arrow-up"></i>
     </button>
 
+    <script src="script.js"></script>
     <script src="professionaldomain.js"></script>
 </body>
 </html>

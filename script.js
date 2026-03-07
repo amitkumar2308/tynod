@@ -437,7 +437,7 @@ function setSlide(index) {
 function startAutoPlay() {
     autoPlayInterval = setInterval(() => {
         showSlide(currentSlide + 1);
-    }, 7000); // Change slide every 7 seconds
+    }, 10000); // Change slide every 10 seconds
 }
 
 function stopAutoPlay() {
@@ -488,11 +488,9 @@ function initAdvantageCarousel() {
     advCards = advTrack.querySelectorAll('.adv-card');
     if (advCards.length === 0) return;
 
-    // Calculate cards per view based on screen width
     function calcCardsPerView() {
-        if (window.innerWidth <= 768) return 1;
-        if (window.innerWidth <= 1024) return 2;
-        return 3;
+        if (window.innerWidth <= 1024) return 1;
+        return 2;
     }
 
     advCardsPerView = calcCardsPerView();
