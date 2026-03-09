@@ -7,7 +7,7 @@
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
     <meta name="description" content="TYNOD is a distinguished provider of management systems certification, strategic business solutions, executive training, industrial analysis, technical assistance, product inspections, and auditing services.">
     <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
@@ -48,8 +48,8 @@
                     <div class="carousel-overlay anniversary-overlay"></div>
                     <div class="carousel-content anniversary-content-slide">
                         <div class="container anniversary-container">
-                            <h3 class="carousel-subtitle anniversary-subtitle">CELEBRATING SECOND YEAR OF SUCCESSFUL OPERATIONS</h3>
                             <h1 class="carousel-heading anniversary-heading">Two Years of <span class="text-gold">Defining Momentum</span></h1>
+                            <h3 class="carousel-subtitle anniversary-subtitle">CELEBRATING SECOND YEAR OF SUCCESSFUL OPERATIONS</h3>
                             <p class="carousel-description anniversary-desc">Two years ago, we set out to elevate standards, deliver measurable impact, and build enduring trust. Today, we mark not just an anniversary, but accelerated growth, expanded capabilities, and strengthened partnerships. Ambition has translated into execution; vision into value; commitment into credibility. This milestone is only the beginning. We move forward with clarity, scale with precision, and lead with unwavering integrity. The ascent continues.</p>
                             <div class="anniversary-badges">
                                 <div class="anniversary-badge-item">
@@ -333,14 +333,18 @@
             <!-- Mission & Vision Cards -->
             <div class="mv-v2-section">
                 <div class="mv-v2-card">
-
+                    <div class="mv-v2-icon-wrap">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
                     <div class="mv-v2-body">
                         <h4>Our Mission</h4>
                         <p>To serve as a trusted catalyst for organizational distinction by delivering authoritative certifications, executive-level training, strategic technical expertise, rigorous industrial analysis, and independent management system auditing — empowering our clients to achieve sustainable growth, uncompromising compliance, and enduring operational excellence</p>
                     </div>
                 </div>
                 <div class="mv-v2-card">
-
+                    <div class="mv-v2-icon-wrap vision-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
                     <div class="mv-v2-body">
                         <h4>Our Vision</h4>
                         <p>To be the partner of choice for organizations seeking world-class assurance and transformation, setting benchmarks in certification excellence, professional integrity, and sustainable performance while shaping resilient, future-ready enterprises.</p>
@@ -358,176 +362,204 @@
                     <span class="section-tag">TYNOD Advantage</span>
                     <h2>The TYNOD <span class="text-gradient">Advantage</span></h2>
                 </div>
-                <div class="advantage-nav-arrows">
-                    <button class="adv-arrow adv-prev" onclick="changeAdvantage(-1)"><i class="fas fa-chevron-left"></i></button>
-                    <button class="adv-arrow adv-next" onclick="changeAdvantage(1)"><i class="fas fa-chevron-right"></i></button>
-                </div>
             </div>
         </div>
 
-        <div class="advantage-carousel-wrapper">
+        <div class="advantage-outer">
+            <button class="adv-arrow adv-side adv-prev" onclick="changeAdvantage(-1)"><i class="fas fa-chevron-left"></i></button>
+            <div class="advantage-carousel-wrapper">
             <div class="advantage-track" id="advantageTrack">
                 <!-- Card 1 - Certifications -->
-                <div class="adv-card adv-card-blue">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad1.png" alt="Certifications">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">01</div>
-                        <h4>Management Systems Certifications</h4>
-                        <ul class="adv-list">
-                            <li>Independent third-party validation of management system effectiveness</li>
-                            <li>Demonstrates disciplined governance and structured processes</li>
-                            <li>Embeds risk-based thinking across operations</li>
-                            <li>Reinforces commitment to continual improvement</li>
-                            <li>Aligns with globally recognized standards and best practices</li>
-                            <li>Enhances credibility with customers and regulators</li>
-                            <li>Builds stakeholder trust and confidence</li>
-                            <li>Strengthens operational resilience and consistency</li>
-                            <li>Improves efficiency and decision-making</li>
-                            <li>Positions the organization for sustainable growth and competitiveness</li>
-                        </ul>
-                    </div>
-                </div>
+<div class="adv-card adv-card-blue" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-certificate"></i> Certifications</span>
+        <img src="assets/sample/MANAGEMENT%20SYSTEM%20CERTIFICATION.png" alt="Certifications">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">ACCREDITED ASSURANCE. TRUSTED CERTIFICATION.</p>
+            <h3 class="adv-overlay-title">Management Systems <span>Certifications</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Independent third-party validation of management system effectiveness</li>
+            <li>Demonstrates disciplined governance and structured processes</li>
+            <li>Embeds risk-based thinking across operations</li>
+            <li>Reinforces commitment to continual improvement</li>
+            <li>Aligns with globally recognized standards and best practices</li>
+            <li>Enhances credibility with customers and regulators</li>
+            <li>Builds stakeholder trust and confidence</li>
+            <li>Strengthens operational resilience and consistency</li>
+            <li>Improves efficiency and decision-making</li>
+            <li>Positions the organization for sustainable growth</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 2 - Trainings -->
-                <div class="adv-card adv-card-gold">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad2.png" alt="Trainings">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">02</div>
-                        <h4>Management Systems Trainings</h4>
-                        <ul class="adv-list">
-                            <li>Executive Leadership &amp; Strategic Governance Training</li>
-                            <li>Management Systems Awareness &amp; Implementation Training (ISO Standards)</li>
-                            <li>Internal Auditor Competency Development</li>
-                            <li>Operational Excellence &amp; Lean Transformation Workshops</li>
-                            <li>Quality Assurance &amp; Problem-Solving Training (Core Tools / Root Cause Analysis)</li>
-                            <li>Health, Safety &amp; Risk Management Training</li>
-                            <li>Technical Skills &amp; Process Capability Training</li>
-                            <li>Compliance &amp; Regulatory Training Programs</li>
-                            <li>Customer Experience &amp; Service Excellence Training</li>
-                            <li>Digital Transformation &amp; Data-Driven Decision Training</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 2 - Trainings -->
+<div class="adv-card adv-card-gold" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-graduation-cap"></i> Trainings</span>
+        <img src="assets/sample/MANAGEMENT%20SYSTEM%20TRAINING.png" alt="Trainings">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">STRUCTURED LEARNING. CERTIFIED COMPETENCE.</p>
+            <h3 class="adv-overlay-title">Management Systems <span>Trainings</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Executive Leadership &amp; Strategic Governance Training</li>
+            <li>Management Systems Awareness &amp; Implementation Training (ISO Standards)</li>
+            <li>Internal Auditor Competency Development</li>
+            <li>Operational Excellence &amp; Lean Transformation Workshops</li>
+            <li>Quality Assurance &amp; Problem-Solving Training (Core Tools / Root Cause Analysis)</li>
+            <li>Health, Safety &amp; Risk Management Training</li>
+            <li>Technical Skills &amp; Process Capability Training</li>
+            <li>Compliance &amp; Regulatory Training Programs</li>
+            <li>Customer Experience &amp; Service Excellence Training</li>
+            <li>Digital Transformation &amp; Data-Driven Decision Training</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 3 - Industrial Analysis -->
-                <div class="adv-card adv-card-dark">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad3.png" alt="Industrial Analysis">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">03</div>
-                        <h4>Industrial Analysis</h4>
-                        <ul class="adv-list">
-                            <li>Operational Performance Analysis</li>
-                            <li>Process Capability &amp; Statistical Analysis</li>
-                            <li>Capacity &amp; Bottleneck Analysis</li>
-                            <li>Cost Structure &amp; Profitability Analysis</li>
-                            <li>Supply Chain &amp; Logistics Analysis</li>
-                            <li>Risk &amp; Compliance Analysis</li>
-                            <li>Quality Performance &amp; Defect Analysis</li>
-                            <li>Energy &amp; Resource Efficiency Analysis</li>
-                            <li>Technology &amp; Automation Readiness Analysis</li>
-                            <li>Market &amp; Competitive Position Analysis</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 3 - Industrial Analysis -->
+<div class="adv-card adv-card-dark" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-chart-bar"></i> Analysis</span>
+        <img src="assets/sample/INDUSTRIAL%20ANALYSIS.png" alt="Industrial Analysis">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">SIGNATURE INDUSTRIAL INTELLIGENCE.</p>
+            <h3 class="adv-overlay-title">Industrial <span>Analysis</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Operational Performance Analysis</li>
+            <li>Process Capability &amp; Statistical Analysis</li>
+            <li>Capacity &amp; Bottleneck Analysis</li>
+            <li>Cost Structure &amp; Profitability Analysis</li>
+            <li>Supply Chain &amp; Logistics Analysis</li>
+            <li>Risk &amp; Compliance Analysis</li>
+            <li>Quality Performance &amp; Defect Analysis</li>
+            <li>Energy &amp; Resource Efficiency Analysis</li>
+            <li>Technology &amp; Automation Readiness Analysis</li>
+            <li>Market &amp; Competitive Position Analysis</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 4 - Technical Assistance -->
-                <div class="adv-card adv-card-blue">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad4.png" alt="Technical Assistance">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">04</div>
-                        <h4>Project Technical Assistance</h4>
-                        <ul class="adv-list">
-                            <li>Project Planning &amp; Technical Feasibility Support</li>
-                            <li>Engineering &amp; Process Design Advisory</li>
-                            <li>Implementation &amp; Commissioning Assistance</li>
-                            <li>Regulatory &amp; Compliance Support</li>
-                            <li>Technology Integration &amp; Automation Support</li>
-                            <li>Risk Assessment &amp; Mitigation Planning</li>
-                            <li>Quality Assurance &amp; Validation Support</li>
-                            <li>Documentation &amp; Technical Governance</li>
-                            <li>Stakeholder Coordination &amp; Technical Reviews</li>
-                            <li>Performance Optimization &amp; Post-Implementation Support</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 4 - Technical Assistance -->
+<div class="adv-card adv-card-blue" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-tools"></i> Technical</span>
+        <img src="assets/sample/PROJECT%20TECHNICAL%20ASSISTANCE%20%20.png" alt="Technical Assistance">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">WHERE EXPERTISE BECOMES ASSURANCE.</p>
+            <h3 class="adv-overlay-title">Project Technical <span>Assistance</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Project Planning &amp; Technical Feasibility Support</li>
+            <li>Engineering &amp; Process Design Advisory</li>
+            <li>Implementation &amp; Commissioning Assistance</li>
+            <li>Regulatory &amp; Compliance Support</li>
+            <li>Technology Integration &amp; Automation Support</li>
+            <li>Risk Assessment &amp; Mitigation Planning</li>
+            <li>Quality Assurance &amp; Validation Support</li>
+            <li>Documentation &amp; Technical Governance</li>
+            <li>Stakeholder Coordination &amp; Technical Reviews</li>
+            <li>Performance Optimization &amp; Post-Implementation Support</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 5 - Product Inspection -->
-                <div class="adv-card adv-card-gold">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad5.png" alt="Product Inspection">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">05</div>
-                        <h4>Industrial Product Inspection</h4>
-                        <ul class="adv-list">
-                            <li>Incoming Material Inspection</li>
-                            <li>In-Process Quality Inspection</li>
-                            <li>Final Product Conformance Inspection</li>
-                            <li>Dimensional &amp; Metrology Inspection</li>
-                            <li>Visual &amp; Workmanship Inspection</li>
-                            <li>Functional &amp; Performance Testing</li>
-                            <li>Non-Destructive Testing (NDT) Inspection</li>
-                            <li>Pre-Dispatch / Pre-Shipment Inspection</li>
-                            <li>Supplier Quality Inspection &amp; Surveillance</li>
-                            <li>Customer Witness &amp; Third-Party Inspection Support</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 5 - Product Inspection -->
+<div class="adv-card adv-card-gold" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-search"></i> Inspection</span>
+        <img src="assets/sample/INDUSTRIAL%20PRODUCT%20INSPECTION%20.png" alt="Product Inspection">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">GUARDIANS OF PRODUCT INTEGRITY.</p>
+            <h3 class="adv-overlay-title">Industrial Product <span>Inspection</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Incoming Material Inspection</li>
+            <li>In-Process Quality Inspection</li>
+            <li>Final Product Conformance Inspection</li>
+            <li>Dimensional &amp; Metrology Inspection</li>
+            <li>Visual &amp; Workmanship Inspection</li>
+            <li>Functional &amp; Performance Testing</li>
+            <li>Non-Destructive Testing (NDT) Inspection</li>
+            <li>Pre-Dispatch / Pre-Shipment Inspection</li>
+            <li>Supplier Quality Inspection &amp; Surveillance</li>
+            <li>Customer Witness &amp; Third-Party Inspection Support</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 6 - Auditing -->
-                <div class="adv-card adv-card-dark">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad6.png" alt="System Auditing">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">06</div>
-                        <h4>Management System Auditing</h4>
-                        <ul class="adv-list">
-                            <li>Internal Management System Audits</li>
-                            <li>Supplier &amp; Second-Party Audits</li>
-                            <li>Certification Readiness (Pre-Assessment) Audits</li>
-                            <li>Integrated Management System (IMS) Audits</li>
-                            <li>Process &amp; Operational Audits</li>
-                            <li>Compliance &amp; Regulatory Audits</li>
-                            <li>Risk-Based Auditing</li>
-                            <li>Remote / Digital Audits</li>
-                            <li>Management Review Effectiveness Audits</li>
-                            <li>Corrective Action Verification Audits</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 6 - Auditing -->
+<div class="adv-card adv-card-dark" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-clipboard-check"></i> Auditing</span>
+        <img src="assets/sample/MANAGEMENT%20SYSTEM%20AUDITING%20.png" alt="System Auditing">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">TRUSTED STEWARDS OF SYSTEM INTEGRITY.</p>
+            <h3 class="adv-overlay-title">Management System <span>Auditing</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Internal Management System Audits</li>
+            <li>Supplier &amp; Second-Party Audits</li>
+            <li>Certification Readiness (Pre-Assessment) Audits</li>
+            <li>Integrated Management System (IMS) Audits</li>
+            <li>Process &amp; Operational Audits</li>
+            <li>Compliance &amp; Regulatory Audits</li>
+            <li>Risk-Based Auditing</li>
+            <li>Remote / Digital Audits</li>
+            <li>Management Review Effectiveness Audits</li>
+            <li>Corrective Action Verification Audits</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
 
-                <!-- Card 7 - Consulting -->
-                <div class="adv-card adv-card-blue">
-                    <div class="adv-card-img">
-                        <img src="assets/advantage/ad7.png" alt="Business Consulting">
-                    </div>
-                    <div class="adv-card-text">
-                        <div class="adv-card-num">07</div>
-                        <h4>Business Management Consulting</h4>
-                        <ul class="adv-list">
-                            <li>Strategic Planning &amp; Transformation Advisory</li>
-                            <li>Operational Excellence &amp; Performance Improvement</li>
-                            <li>Organizational Design &amp; Change Management</li>
-                            <li>Corporate Governance &amp; Risk Management Consulting</li>
-                            <li>Business Process Reengineering (BPR)</li>
-                            <li>Financial Performance &amp; Cost Optimization Advisory</li>
-                            <li>Market Expansion &amp; Growth Strategy Consulting</li>
-                            <li>Leadership Coaching &amp; Executive Advisory</li>
-                            <li>Digital Transformation &amp; Innovation Consulting</li>
-                            <li>Continuous Improvement &amp; Lean Management Consulting</li>
-                        </ul>
-                    </div>
-                </div>
+<!-- Card 7 - Consulting -->
+<div class="adv-card adv-card-blue" data-tilt>
+    <div class="adv-card-img">
+        <span class="adv-img-badge"><i class="fas fa-briefcase"></i> Consulting</span>
+        <img src="assets/sample/BUSINESS%20MANAGEMENT%20CONSULTING.png" alt="Business Consulting">
+        <div class="adv-img-overlay">
+            <p class="adv-overlay-sub">SUSTAINABLE CONSULTING FOR ENDURING LEGACY.</p>
+            <h3 class="adv-overlay-title">Business Management <span>Consulting</span></h3>
+        </div>
+    </div>
+    <div class="adv-card-text">
+        <ul class="adv-list">
+            <li>Strategic Planning &amp; Transformation Advisory</li>
+            <li>Operational Excellence &amp; Performance Improvement</li>
+            <li>Organizational Design &amp; Change Management</li>
+            <li>Corporate Governance &amp; Risk Management Consulting</li>
+            <li>Business Process Reengineering (BPR)</li>
+            <li>Financial Performance &amp; Cost Optimization Advisory</li>
+            <li>Market Expansion &amp; Growth Strategy Consulting</li>
+            <li>Leadership Coaching &amp; Executive Advisory</li>
+            <li>Digital Transformation &amp; Innovation Consulting</li>
+            <li>Continuous Improvement &amp; Lean Management Consulting</li>
+        </ul>
+    </div>
+    <div class="adv-bottom-bar"></div>
+</div>
             </div>
+            </div>
+            <button class="adv-arrow adv-side adv-next" onclick="changeAdvantage(1)"><i class="fas fa-chevron-right"></i></button>
         </div>
 
         <!-- Dot Indicators -->
@@ -636,40 +668,65 @@
 
     <!-- CEO Message Section -->
     <section class="ceo-section" id="ceo">
-        <div class="container">
-            <div class="ceo-content">
-                <div class="ceo-image-col">
-                    <div class="ceo-image-wrapper">
-                        <img src="assets/NITIN PHOT R2.jpg" alt="CEO & Founder">
-                        <div class="ceo-overlay-badge">
-                            <span>27+</span>
-                            <small>Years of Experience</small>
-                        </div>
-                    </div>
+
+        <!-- Full BG Photo with overlay -->
+        <div class="ceo-bg-photo">
+            <img src="assets/ceo_portrait.png" alt="Nitin Sarwal">
+            <div class="ceo-bg-overlay"></div>
+        </div>
+
+        <div class="ceo-layout">
+
+            <!-- Left: Giant Quote Block -->
+            <div class="ceo-left-block">
+                <div class="ceo-tag-line">
+                    <span class="ceo-tag-dot"></span>
+                    <span>MESSAGE FROM LEADERSHIP</span>
                 </div>
-                <div class="ceo-text-col">
-                    <span class="section-tag">Message from Leadership</span>
-                    <h2>CEO &amp; Founder</h2>
-                    <div class="ceo-quote">
-                        <i class="fas fa-quote-left ceo-quote-icon"></i>
-                        <div class="ceo-quote-two-col">
-                            <div class="ceo-quote-col">
-                                <p>As CEO &amp; Founder, bringing 27 years of distinguished experience across industry and management systems, I have always upheld the belief that enduring success is built on strong governance, technical rigor, and an uncompromising pursuit of excellence.</p>
-                                <p>As we proudly complete two years of successful operations, our organization continues to advance with a clear purpose — to serve as a trusted partner in management system certification, training, industrial analysis, project technical assistance, product inspection, management system auditing, and business management consulting.</p>
-                            </div>
-                            <div class="ceo-quote-col">
-                                <p>We are committed to delivering insight, assurance, and transformative value that enable our clients to strengthen performance, manage risk, and achieve sustainable growth with confidence.</p>
-                                <p>I extend my sincere gratitude to our clients, partners, and stakeholders for their trust as we continue to set higher standards and shape a future defined by professionalism, integrity, and excellence.</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="ceo-signature">
-                        <div class="signature-line"></div>
-                        <p class="ceo-name">NITIN SARWAL</p>
-                        <p class="ceo-role">CEO &amp; Founder — TYNOD</p>
+                <h2 class="ceo-main-title">CEO <span>&amp;</span> Founder</h2>
+                <div class="ceo-gold-bar"></div>
+                <div class="ceo-big-quote">
+                    <div class="ceo-quote-mark">"</div>
+                    <p>Enduring success is built on strong governance, technical rigor, and an uncompromising pursuit of excellence.</p>
+                </div>
+
+                <!-- Photo sits here on desktop -->
+                <div class="ceo-photo-inset">
+                    <img src="assets/ceo_portrait.png" alt="Nitin Sarwal - CEO &amp; Founder TYNOD">
+                    <div class="ceo-photo-caption">
+                        <p class="sign-name">NITIN SARWAL</p>
+                        <p class="sign-role">CEO &amp; Founder — TYNOD</p>
                     </div>
                 </div>
             </div>
+
+            <!-- Right: Message Content -->
+            <div class="ceo-right-block">
+                <div class="ceo-message-card">
+
+                    <div class="ceo-opening-line">
+                        <i class="fas fa-quote-left"></i>
+                        <p>As CEO &amp; Founder, bringing 27 years of distinguished experience across industry and management systems, I have always upheld the belief that enduring success is built on strong governance, technical rigor, and an uncompromising pursuit of excellence.</p>
+                    </div>
+
+                    <div class="ceo-body-paras">
+                        <p>As we proudly complete two years of successful operations, our organization continues to advance with a clear purpose — to serve as a trusted partner in management system certification, training, industrial analysis, project technical assistance, product inspection, management system auditing, and business management consulting.</p>
+                        <p>We are committed to delivering insight, assurance, and transformative value that enable our clients to strengthen performance, manage risk, and achieve sustainable growth with confidence.</p>
+                        <p>I extend my sincere gratitude to our clients, partners, and stakeholders for their trust as we continue to set higher standards and shape a future defined by professionalism, integrity, and excellence.</p>
+                    </div>
+
+                    <div class="ceo-signature-block">
+                        <div class="ceo-sig-line"></div>
+                        <div class="ceo-sig-info">
+                            <p class="sign-name">NITIN SARWAL</p>
+                            <p class="sign-role">CEO &amp; Founder — TYNOD</p>
+                        </div>
+                        <div class="ceo-sig-icon"><i class="fas fa-award"></i></div>
+                    </div>
+
+                </div>
+            </div>
+
         </div>
     </section>
 
@@ -681,6 +738,57 @@
                 <h2>We are Proud to work with</h2>
                 <div class="divider"></div>
                 <p class="section-subtitle">From small startups to large corporations, serving a diverse range of businesses across industries</p>
+            </div>
+
+            <div class="industries-grid" style="margin-bottom: 4rem;">
+                <div class="industry-card">
+                    <i class="fas fa-industry"></i>
+                    <h4>Mechanical<br>Engineering</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-car"></i>
+                    <h4>Automobile<br>Engineering</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-building"></i>
+                    <h4>Construction<br>Industries</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-coins"></i>
+                    <h4>Financial<br>Industries</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-oil-can"></i>
+                    <h4>Oil &amp; Gas<br>Engineering</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-graduation-cap"></i>
+                    <h4>Education<br>Institutes</h4>
+                </div>
+                <div class="industry-card active">
+                    <i class="fas fa-hamburger"></i>
+                    <h4>Food<br>Industries</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-exchange-alt"></i>
+                    <h4>Trading<br>Units</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-pills"></i>
+                    <h4>Pharma /<br>Chemical</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-bolt"></i>
+                    <h4>Electrical &amp;<br>Electronics</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-tshirt"></i>
+                    <h4>Textile<br>Engineering</h4>
+                </div>
+                <div class="industry-card">
+                    <i class="fas fa-laptop-code"></i>
+                    <h4>IT<br>Industries</h4>
+                </div>
             </div>
 
             <div class="logo-carousel" style="margin-top: 2rem;">

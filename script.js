@@ -710,3 +710,30 @@ if (consultingModal) {
         }
     });
 }
+
+// ===================================
+// 3D Tilt Effect for Advantage Cards
+// ===================================
+function initCardTilt() {
+    document.querySelectorAll('[data-tilt]').forEach(card => {
+        card.addEventListener('mousemove', e => {
+            const r = card.getBoundingClientRect();
+            const x = (e.clientX - r.left) / r.width - 0.5;
+            const y = (e.clientY - r.top) / r.height - 0.5;
+            card.style.transform = `perspective(900px) rotateY(${x * 8}deg) rotateX(${-y * 6}deg) translateZ(6px)`;
+        });
+        card.addEventListener('mouseleave', () => {
+            card.style.transform = 'perspective(900px) rotateY(0deg) rotateX(0deg) translateZ(0px)';
+            card.style.transition = 'transform 0.5s cubic-bezier(0.23, 1, 0.32, 1)';
+        });
+        card.addEventListener('mouseenter', () => {
+            card.style.transition = 'transform 0.1s ease';
+        });
+    });
+}
+
+// Initialize tilt on load
+window.addEventListener('load', initCardTilt);
+
+// Also re-init after carousel setup (in case cards are re-rendered)
+document.addEventListener('DOMContentLoaded', initCardTilt);
