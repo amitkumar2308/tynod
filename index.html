@@ -3,1215 +3,1099 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TYNOD - Elevating Businesses. Empowering Growth</title>
+    <title>⚠️ Server Offline — TYNOD</title>
     <link rel="icon" type="image/x-icon" href="assets/favicon.ico">
-    <meta name="description" content="TYNOD is a distinguished provider of management systems certification, strategic business solutions, executive training, industrial analysis, technical assistance, product inspections, and auditing services.">
-    <link rel="stylesheet" href="styles.css">
-    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Inter:wght@300;400;500;600;700;800&family=Poppins:wght@300;400;500;600;700;800&family=Bebas+Neue&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <meta name="description" content="This server is temporarily offline. The developer hasn't been paid.">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Rajdhani:wght@400;500;600;700&family=Press+Start+2P&display=swap" rel="stylesheet">
+
+    <style>
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg:         #050510;
+            --bg2:        #080818;
+            --card:       #0c0c20;
+            --neon-cyan:  #00f5ff;
+            --neon-pink:  #ff006e;
+            --neon-purple:#b200ff;
+            --neon-green: #00ff88;
+            --neon-yellow:#ffea00;
+            --dim-cyan:   rgba(0,245,255,.15);
+            --dim-pink:   rgba(255,0,110,.15);
+            --dim-purple: rgba(178,0,255,.12);
+            --text:       #e0e0ff;
+            --text-dim:   #7070a0;
+            --text-dimmer:#404060;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: 'Rajdhani', sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow-x: hidden;
+        }
+
+        /* ── scanline overlay ── */
+        body::after {
+            content: '';
+            position: fixed; inset: 0; z-index: 9999;
+            background: repeating-linear-gradient(
+                0deg,
+                transparent,
+                transparent 2px,
+                rgba(0,0,0,.08) 2px,
+                rgba(0,0,0,.08) 4px
+            );
+            pointer-events: none;
+        }
+
+        /* ── animated grid bg ── */
+        .grid-bg {
+            position: fixed; inset: 0; z-index: 0;
+            background-image:
+                linear-gradient(rgba(0,245,255,.04) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(0,245,255,.04) 1px, transparent 1px);
+            background-size: 50px 50px;
+            animation: grid-move 20s linear infinite;
+        }
+        @keyframes grid-move {
+            0%   { background-position: 0 0; }
+            100% { background-position: 50px 50px; }
+        }
+
+        /* ── radial glows ── */
+        .glow-orb {
+            position: fixed; border-radius: 50%; z-index: 0;
+            filter: blur(80px); pointer-events: none;
+            animation: orb-drift ease-in-out infinite;
+        }
+        .orb1 { width: 500px; height: 500px; top: -150px; left: -100px; background: radial-gradient(circle, rgba(178,0,255,.18) 0%, transparent 70%); animation-duration: 12s; }
+        .orb2 { width: 400px; height: 400px; bottom: -100px; right: -80px; background: radial-gradient(circle, rgba(0,245,255,.14) 0%, transparent 70%); animation-duration: 16s; animation-delay: -6s; }
+        .orb3 { width: 300px; height: 300px; top: 40%; left: 60%; background: radial-gradient(circle, rgba(255,0,110,.1) 0%, transparent 70%); animation-duration: 20s; animation-delay: -10s; }
+        @keyframes orb-drift {
+            0%,100% { transform: translate(0,0) scale(1); }
+            33%     { transform: translate(30px,-20px) scale(1.08); }
+            66%     { transform: translate(-20px,15px) scale(.95); }
+        }
+
+        /* ── navbar ── */
+        .navbar {
+            position: relative; z-index: 10;
+            display: flex; align-items: center; justify-content: space-between;
+            padding: 1rem 2.5rem;
+            background: rgba(5,5,20,.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid rgba(0,245,255,.15);
+        }
+        .logo { display: flex; align-items: center; gap: .75rem; }
+        .logo img { height: 38px; width: 38px; border-radius: 6px; object-fit: cover; filter: drop-shadow(0 0 8px var(--neon-cyan)); }
+        .logo-text {
+            font-family: 'Orbitron', monospace;
+            font-size: 1.3rem; font-weight: 900;
+            letter-spacing: .2em;
+            color: var(--neon-cyan);
+            text-shadow: 0 0 20px var(--neon-cyan), 0 0 40px rgba(0,245,255,.4);
+        }
+        .nav-status {
+            display: flex; align-items: center; gap: .5rem;
+            font-family: 'Orbitron', monospace; font-size: .6rem;
+            color: var(--neon-pink);
+            text-shadow: 0 0 10px var(--neon-pink);
+            letter-spacing: .12em;
+        }
+        .status-blink { width: 8px; height: 8px; border-radius: 50%; background: var(--neon-pink); animation: blink-dot 1s step-start infinite; }
+        @keyframes blink-dot { 0%,100%{opacity:1} 50%{opacity:0} }
+
+        /* ── page ── */
+        .page-wrap {
+            position: relative; z-index: 1; flex: 1;
+            display: flex; flex-direction: column;
+            align-items: center; padding: 2.5rem 1.5rem 3rem;
+            gap: 2rem;
+        }
+
+        /* ── glitch title ── */
+        .glitch-wrap { text-align: center; }
+        .glitch {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 900;
+            color: var(--neon-cyan);
+            text-transform: uppercase;
+            letter-spacing: .08em;
+            position: relative;
+            display: inline-block;
+            text-shadow: 0 0 30px var(--neon-cyan), 0 0 60px rgba(0,245,255,.5);
+            animation: glitch-it 4s infinite;
+        }
+        .glitch::before, .glitch::after {
+            content: attr(data-text);
+            position: absolute; top: 0; left: 0;
+            width: 100%; height: 100%;
+        }
+        .glitch::before {
+            color: var(--neon-pink);
+            text-shadow: -2px 0 var(--neon-pink);
+            animation: glitch-before 4s infinite;
+            clip-path: polygon(0 0,100% 0,100% 45%,0 45%);
+        }
+        .glitch::after {
+            color: var(--neon-purple);
+            text-shadow: 2px 0 var(--neon-purple);
+            animation: glitch-after 4s infinite;
+            clip-path: polygon(0 55%,100% 55%,100% 100%,0 100%);
+        }
+        @keyframes glitch-it {
+            0%,90%,100%       { transform: translate(0); }
+            91%               { transform: translate(-2px, 1px); }
+            92%               { transform: translate(2px,-1px); }
+            93%               { transform: translate(-1px, 2px); }
+            94%               { transform: translate(1px,-2px); }
+            95%               { transform: translate(0); }
+        }
+        @keyframes glitch-before {
+            0%,90%,100%       { transform: translate(0); opacity: 0; }
+            91%               { transform: translate(-3px, 0); opacity: .8; }
+            92%               { transform: translate(3px, 0); opacity: .8; }
+            93%,94%           { transform: translate(0); opacity: 0; }
+        }
+        @keyframes glitch-after {
+            0%,90%,100%       { transform: translate(0); opacity: 0; }
+            92%               { transform: translate(3px, 0); opacity: .8; }
+            93%               { transform: translate(-3px, 0); opacity: .8; }
+            94%               { transform: translate(0); opacity: 0; }
+        }
+
+        .glitch-sub {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(.9rem, 2.5vw, 1.4rem);
+            color: var(--neon-pink);
+            letter-spacing: .15em;
+            text-shadow: 0 0 20px var(--neon-pink);
+            margin-top: .5rem;
+        }
+
+        /* ── main shutdown card ── */
+        .shutdown-card {
+            max-width: 720px; width: 100%;
+            background: linear-gradient(135deg, rgba(12,12,32,.97) 0%, rgba(8,8,24,.97) 100%);
+            border: 1px solid rgba(0,245,255,.2);
+            border-radius: 16px;
+            padding: 2.5rem 2.5rem 2rem;
+            position: relative;
+            overflow: hidden;
+            box-shadow:
+                0 0 0 1px rgba(178,0,255,.1),
+                0 30px 80px rgba(0,0,0,.7),
+                inset 0 1px 0 rgba(0,245,255,.08);
+            animation: card-in .7s cubic-bezier(.22,1,.36,1) both;
+        }
+        @keyframes card-in {
+            from { opacity: 0; transform: translateY(50px) scale(.96); }
+            to   { opacity: 1; transform: none; }
+        }
+
+        /* corner accents */
+        .shutdown-card::before, .shutdown-card::after {
+            content: ''; position: absolute;
+            width: 40px; height: 40px;
+        }
+        .shutdown-card::before {
+            top: 0; left: 0;
+            border-top: 2px solid var(--neon-cyan);
+            border-left: 2px solid var(--neon-cyan);
+            border-radius: 16px 0 0 0;
+        }
+        .shutdown-card::after {
+            bottom: 0; right: 0;
+            border-bottom: 2px solid var(--neon-pink);
+            border-right: 2px solid var(--neon-pink);
+            border-radius: 0 0 16px 0;
+        }
+
+        /* server icon */
+        .srv-icon {
+            width: 90px; height: 90px;
+            border-radius: 50%;
+            background: radial-gradient(circle, rgba(255,0,110,.18) 0%, transparent 70%);
+            border: 2px solid rgba(255,0,110,.4);
+            display: flex; align-items: center; justify-content: center;
+            font-size: 2.4rem;
+            margin: 0 auto 1.5rem;
+            position: relative;
+            animation: srv-pulse 2s ease-in-out infinite;
+        }
+        @keyframes srv-pulse {
+            0%,100% { box-shadow: 0 0 0 0 rgba(255,0,110,.4), 0 0 30px rgba(255,0,110,.2); }
+            50%     { box-shadow: 0 0 0 16px rgba(255,0,110,0), 0 0 50px rgba(255,0,110,.35); }
+        }
+        .srv-offline-tag {
+            position: absolute; top: -6px; right: -6px;
+            background: var(--neon-pink); color: #000;
+            font-family: 'Orbitron', monospace;
+            font-size: .45rem; font-weight: 700;
+            padding: .2rem .4rem; border-radius: 4px;
+            letter-spacing: .1em;
+            animation: blink-dot 1s step-start infinite;
+        }
+
+        .card-badge {
+            display: inline-flex; align-items: center; gap: .5rem;
+            border: 1px solid rgba(255,0,110,.4);
+            background: rgba(255,0,110,.08);
+            color: var(--neon-pink);
+            font-family: 'Orbitron', monospace;
+            font-size: .55rem; letter-spacing: .14em;
+            padding: .35rem .9rem; border-radius: 50px;
+            margin-bottom: 1.2rem;
+            text-transform: uppercase;
+            text-shadow: 0 0 10px var(--neon-pink);
+        }
+        .badge-dot { width: 6px; height: 6px; border-radius: 50%; background: var(--neon-pink); animation: blink-dot 1s step-start infinite; }
+
+        .card-title {
+            font-family: 'Orbitron', monospace;
+            font-size: clamp(1.2rem, 3vw, 1.75rem);
+            font-weight: 900;
+            color: #fff;
+            line-height: 1.25;
+            margin-bottom: .75rem;
+            letter-spacing: .05em;
+        }
+        .card-title .hi { color: var(--neon-cyan); text-shadow: 0 0 20px var(--neon-cyan); }
+
+        .card-desc {
+            font-size: 1.05rem; line-height: 1.75;
+            color: var(--text-dim); margin-bottom: 1.75rem;
+            font-weight: 500;
+        }
+        .card-desc em { color: var(--neon-yellow); font-style: normal; font-weight: 700; filter: drop-shadow(0 0 6px var(--neon-yellow)); }
+
+        /* stat row */
+        .stat-row {
+            display: grid; grid-template-columns: repeat(3, 1fr);
+            gap: 1rem; margin-bottom: 1.75rem;
+        }
+        .stat-box {
+            background: rgba(0,245,255,.04);
+            border: 1px solid rgba(0,245,255,.12);
+            border-radius: 10px; padding: .9rem .6rem;
+            text-align: center;
+            transition: border-color .3s, box-shadow .3s;
+        }
+        .stat-box:hover { border-color: rgba(0,245,255,.4); box-shadow: 0 0 20px rgba(0,245,255,.1); }
+        .stat-icon { font-size: 1.4rem; margin-bottom: .35rem; }
+        .stat-label { font-family: 'Orbitron', monospace; font-size: .48rem; color: var(--text-dimmer); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .3rem; }
+        .stat-val { font-family: 'Orbitron', monospace; font-size: .8rem; font-weight: 700; }
+        .val-red { color: var(--neon-pink); text-shadow: 0 0 10px var(--neon-pink); }
+        .val-cyan { color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+        .val-green { color: var(--neon-green); text-shadow: 0 0 10px var(--neon-green); }
+
+        /* divider */
+        .neon-divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, var(--neon-purple), var(--neon-cyan), var(--neon-purple), transparent);
+            margin: 1.5rem 0;
+            opacity: .5;
+        }
+
+        /* contact */
+        .contact-block {
+            display: flex; flex-wrap: wrap; gap: .75rem;
+            justify-content: center; align-items: center;
+        }
+        .contact-btn {
+            display: inline-flex; align-items: center; gap: .5rem;
+            padding: .7rem 1.5rem;
+            border-radius: 8px; border: none; cursor: pointer;
+            font-family: 'Rajdhani', sans-serif;
+            font-size: .95rem; font-weight: 700;
+            text-decoration: none;
+            letter-spacing: .06em;
+            transition: all .25s;
+        }
+        .btn-cyan {
+            background: transparent;
+            border: 2px solid var(--neon-cyan);
+            color: var(--neon-cyan);
+            text-shadow: 0 0 8px var(--neon-cyan);
+            box-shadow: 0 0 15px rgba(0,245,255,.15), inset 0 0 15px rgba(0,245,255,.04);
+        }
+        .btn-cyan:hover { background: rgba(0,245,255,.12); box-shadow: 0 0 30px rgba(0,245,255,.4), inset 0 0 20px rgba(0,245,255,.08); transform: translateY(-2px); }
+        .btn-pink {
+            background: transparent;
+            border: 2px solid var(--neon-pink);
+            color: var(--neon-pink);
+            text-shadow: 0 0 8px var(--neon-pink);
+            box-shadow: 0 0 15px rgba(255,0,110,.15), inset 0 0 15px rgba(255,0,110,.04);
+        }
+        .btn-pink:hover { background: rgba(255,0,110,.12); box-shadow: 0 0 30px rgba(255,0,110,.4), inset 0 0 20px rgba(255,0,110,.08); transform: translateY(-2px); }
+
+        /* ── typing text ── */
+        .terminal-wrap {
+            max-width: 720px; width: 100%;
+            background: rgba(0,0,0,.6);
+            border: 1px solid rgba(0,255,136,.2);
+            border-radius: 12px;
+            padding: 0;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0,255,136,.06);
+            animation: card-in .7s cubic-bezier(.22,1,.36,1) .1s both;
+        }
+        .term-header {
+            background: rgba(0,20,10,.8);
+            padding: .6rem 1rem;
+            display: flex; align-items: center; gap: .5rem;
+            border-bottom: 1px solid rgba(0,255,136,.15);
+        }
+        .term-dot { width: 10px; height: 10px; border-radius: 50%; }
+        .t-red   { background: #ff5f56; }
+        .t-yellow{ background: #ffbd2e; }
+        .t-green { background: #27c93f; }
+        .term-title { font-family: 'Orbitron', monospace; font-size: .5rem; color: rgba(0,255,136,.5); letter-spacing: .15em; margin-left: .5rem; }
+        .term-body { padding: 1rem 1.2rem; font-family: 'Press Start 2P', monospace; font-size: .58rem; line-height: 2.2; }
+        .t-line { display: flex; gap: .5rem; opacity: 0; animation: fade-line .1s forwards; }
+        .t-prompt { color: var(--neon-green); }
+        .t-text   { color: rgba(0,255,136,.85); }
+        .t-error  { color: var(--neon-pink); }
+        .t-warn   { color: var(--neon-yellow); }
+        .t-cursor { display: inline-block; width: 8px; height: 1em; background: var(--neon-green); animation: cursor-blink .7s step-start infinite; vertical-align: middle; }
+        @keyframes cursor-blink { 0%,100%{opacity:1} 50%{opacity:0} }
+        @keyframes fade-line { to { opacity: 1; } }
+
+        /* ── game section ── */
+        .game-section {
+            max-width: 780px; width: 100%;
+            animation: card-in .7s cubic-bezier(.22,1,.36,1) .2s both;
+        }
+        .game-hdr {
+            display: flex; align-items: center; justify-content: space-between;
+            margin-bottom: 1rem; flex-wrap: wrap; gap: .75rem;
+        }
+        .game-title-txt {
+            font-family: 'Press Start 2P', monospace;
+            font-size: .75rem; color: var(--neon-yellow);
+            text-shadow: 0 0 15px var(--neon-yellow);
+        }
+        .score-hud {
+            display: flex; align-items: center; gap: 1.5rem;
+            background: rgba(0,0,0,.5); border: 1px solid rgba(0,245,255,.15);
+            border-radius: 8px; padding: .5rem 1.2rem;
+        }
+        .hud-item { text-align: center; }
+        .hud-lbl { font-family: 'Orbitron', monospace; font-size: .42rem; color: var(--text-dimmer); letter-spacing: .12em; display: block; }
+        .hud-val { font-family: 'Press Start 2P', monospace; font-size: .7rem; color: var(--neon-cyan); text-shadow: 0 0 10px var(--neon-cyan); }
+        #hs-val { color: var(--neon-purple); text-shadow: 0 0 10px var(--neon-purple); }
+
+        #game-canvas {
+            display: block; width: 100%; height: 270px;
+            border-radius: 12px;
+            border: 1px solid rgba(0,245,255,.25);
+            box-shadow: 0 0 40px rgba(0,245,255,.08), 0 20px 60px rgba(0,0,0,.6);
+            cursor: pointer; outline: none;
+            background: #02020a;
+        }
+
+        .game-controls {
+            display: flex; align-items: center; justify-content: center;
+            gap: 1.5rem; margin-top: .75rem; flex-wrap: wrap;
+        }
+        .ctrl {
+            display: flex; align-items: center; gap: .4rem;
+            font-size: .78rem; color: var(--text-dimmer); font-family: 'Rajdhani', sans-serif;
+        }
+        .key {
+            background: rgba(255,255,255,.06);
+            border: 1px solid rgba(255,255,255,.15);
+            border-radius: 5px; padding: .15rem .45rem;
+            font-family: 'Orbitron', monospace; font-size: .5rem;
+            color: var(--neon-cyan); letter-spacing: .06em;
+        }
+        .msg-line {
+            text-align: center; margin-top: .5rem;
+            font-family: 'Press Start 2P', monospace;
+            font-size: .58rem; color: var(--text-dimmer); min-height: 1.4em;
+        }
+
+        /* ── footer ── */
+        .page-footer {
+            position: relative; z-index: 1;
+            text-align: center; padding: 1.5rem;
+            font-family: 'Orbitron', monospace;
+            font-size: .5rem; color: var(--text-dimmer); letter-spacing: .12em;
+            border-top: 1px solid rgba(0,245,255,.08);
+        }
+        .footer-glow { color: var(--neon-cyan); text-shadow: 0 0 8px var(--neon-cyan); }
+
+        /* ── responsive ── */
+        @media (max-width: 600px) {
+            .navbar { padding: .9rem 1.2rem; }
+            .shutdown-card { padding: 1.75rem 1.2rem; }
+            .stat-row { grid-template-columns: repeat(2,1fr); }
+            .glitch { font-size: 1.5rem; }
+            #game-canvas { height: 210px; }
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Main Navbar -->
-    <nav class="navbar" id="navbar">
-        <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/tynodlogo.jpeg" alt="TYNOD Logo">
-                <span class="logo-text">TYNOD</span>
-            </div>
-            <div class="menu-toggle" id="menuToggle">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-            <ul class="nav-menu" id="navMenu">
-                <li><a href="#about" class="nav-link">The Essence of TYNOD</a></li>
-                <li><a href="professionaldomain.html" class="nav-link">Our Professional Domain</a></li>
-                <li><a href="#advantage" class="nav-link">TYNOD Advantage</a></li>
-                <li><a href="#clients" class="nav-link">Growing Together With</a></li>
-                <li><a href="#contact" class="nav-link">Contact Us</a></li>
-                <li><a href="#inquiry" class="nav-link cta-link">Post your Inquiry</a></li>
-            </ul>
-        </div>
-    </nav>
+<div class="grid-bg"></div>
+<div class="glow-orb orb1"></div>
+<div class="glow-orb orb2"></div>
+<div class="glow-orb orb3"></div>
 
+<!-- ── Navbar ── -->
+<nav class="navbar">
+    <div class="logo">
+        <img src="assets/tynodlo" alt="TY">
+        <span class="logo-text"></span>
+    </div>
+    <div class="nav-status">
+        <span class="status-blink"></span>
+        SERVER_OFFLINE
+    </div>
+</nav>
 
-    <!-- Carousel Banner -->
-    <section class="carousel-banner" id="carousel">
-        <div class="carousel-container">
-            <div class="carousel-slides">
-                <!-- Slide 1 - 2nd Anniversary Celebration -->
-                <div class="carousel-slide anniversary-slide active">
-                    <video class="carousel-video-bg" autoplay muted loop playsinline>
-                        <source src="assets/front.mp4" type="video/mp4">
-                    </video>
-                    <div class="carousel-overlay anniversary-overlay"></div>
-                    <div class="carousel-content anniversary-content-slide">
-                        <div class="container anniversary-container">
-                            <h1 class="carousel-heading anniversary-heading">Two Years of <span class="text-gold">Defining Momentum</span></h1>
-                            <h3 class="carousel-subtitle anniversary-subtitle">CELEBRATING SECOND YEAR OF SUCCESSFUL OPERATIONS</h3>
-                            <p class="carousel-description anniversary-desc">Two years ago, we set out to elevate standards, deliver measurable impact, and build enduring trust. Today, we mark not just an anniversary, but accelerated growth, expanded capabilities, and strengthened partnerships. Ambition has translated into execution; vision into value; commitment into credibility. This milestone is only the beginning. We move forward with clarity, scale with precision, and lead with unwavering integrity. The ascent continues.</p>
-                            <div class="anniversary-badges">
-                                <div class="anniversary-badge-item">
-                                    <span class="badge-number">100+</span>
-                                    <span class="badge-label">Satisfied Customer</span>
-                                </div>
-                                <div class="anniversary-badge-item">
-                                    <span class="badge-number">70+</span>
-                                    <span class="badge-label">Certifications</span>
-                                </div>
-                                <div class="anniversary-badge-item">
-                                    <span class="badge-number">100+</span>
-                                    <span class="badge-label">Expert Services</span>
-                                </div>
-                            </div>
-                            <a href="#contact" class="btn btn-anniversary">
-                                Partner With Us <i class="fas fa-arrow-right"></i>
-                            </a>
-                        </div>
-                    </div>
-                </div>
+<!-- ── Content ── -->
+<div class="page-wrap">
 
-                <!-- Slide 2 - Certifications -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image.webp" alt="Management Systems Certifications">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">ACCREDITED ASSURANCE. TRUSTED CERTIFICATION.</h3>
-                            <h1 class="carousel-heading"><span class="text-blue">Management Systems</span> Certifications</h1>
-                            <p class="carousel-description">Management system certifications represent independent third-party validation that an organization operates with disciplined governance, risk-based thinking, and continual improvement aligned to globally recognized standards. They strengthen stakeholder confidence, enhance operational resilience, and position the organization for sustainable growth in competitive markets.</p>
-                            <a href="#contact" class="btn btn-blue">
-                                Enquire Now
-                            </a>
-                        </div>
-                    </div>
-                </div>
+    <!-- Glitch heading -->
+    <div class="glitch-wrap">
+        <div class="glitch" data-text="SERVER DOWN">SERVER DOWN</div>
+        <div class="glitch-sub">// DEVELOPER NOT PAID //</div>
+    </div>
 
-                <!-- Slide 3 - Trainings -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image2.webp" alt="Management Systems Trainings">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">STRUCTURED LEARNING. CERTIFIED COMPETENCE.</h3>
-                            <h1 class="carousel-heading"><span class="text-blue">Management Systems</span> Trainings</h1>
-                            <p class="carousel-description">Our training solutions are architected to build institutional capability, strengthen governance, and empower teams with the knowledge and skills required to deliver consistent performance, manage risk effectively, and sustain competitive advantage</p>
-                            <a href="#inquiry" class="btn btn-blue">
-                                Get Free Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 4 - Industrial Analysis -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image3.webp" alt="Industrial Analysis">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">SIGNATURE INDUSTRIAL INTELLIGENCE</h3>
-                            <h1 class="carousel-heading">INDUSTRIAL <span class="text-blue">ANALYSIS</span></h1>
-                            <p class="carousel-description">Our industrial analysis services provide data-driven insight into operational performance, risk exposure, and strategic opportunities, enabling leadership to make informed decisions, optimize resources, and achieve sustainable operational excellence.</p>
-                            <a href="#services" class="btn btn-blue">
-                                Explore Services
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 5 - Project Technical Assistance -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image4.webp" alt="Project Technical Assistance">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">WHERE EXPERTISE BECOMES ASSURANCE.</h3>
-                            <h1 class="carousel-heading">PROJECT <span class="text-blue">TECHNICAL ASSISTANCE</span></h1>
-                            <p class="carousel-description">Our project technical assistance services provide structured expertise and disciplined oversight across the project lifecycle, enabling organizations to execute complex initiatives with technical confidence, operational integrity, and assured delivery of performance objectives.</p>
-                            <a href="#services" class="btn btn-blue">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 6 - Industrial Product Inspection -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image5.webp" alt="Industrial Product Inspection">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">GUARDIANS OF PRODUCT INTEGRITY</h3>
-                            <h1 class="carousel-heading">INDUSTRIAL <span class="text-blue">PRODUCT INSPECTION</span></h1>
-                            <p class="carousel-description">Our industrial product inspection services provide independent assurance of product quality, compliance, and reliability through disciplined verification processes, enabling organizations to mitigate risk, protect brand reputation, and deliver confidence to customers and stakeholders.</p>
-                            <a href="#services" class="btn btn-blue">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 7 - Management System Auditing -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image6.webp" alt="Management System Auditing">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">TRUSTED STEWARDS OF SYSTEM INTEGRITY</h3>
-                            <h1 class="carousel-heading">MANAGEMENT SYSTEM <span class="text-blue">AUDITING</span></h1>
-                            <p class="carousel-description">Our management system auditing services deliver objective insight, disciplined assurance, and strategic recommendations that strengthen governance, enhance compliance, and drive continual improvement across the organization in alignment with globally recognized standards.</p>
-                            <a href="#services" class="btn btn-blue">
-                                Learn More
-                            </a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Slide 8 - Business Management Consulting -->
-                <div class="carousel-slide">
-                    <div class="carousel-overlay"></div>
-                    <img src="assets/carousel/image7.webp" alt="Business Management Consulting">
-                    <div class="carousel-content">
-                        <div class="container">
-                            <h3 class="carousel-subtitle">SUSTAINABLE CONSULTING FOR ENDURING LEGACY</h3>
-                            <h1 class="carousel-heading">BUSINESS MANAGEMENT <span class="text-blue">CONSULTING</span></h1>
-                            <p class="carousel-description">Our business management consulting services empower organizations to navigate complexity, strengthen leadership capability, and achieve strategic objectives through insight-driven solutions, disciplined execution, and a relentless focus on value creation.</p>
-                            <a href="#contact" class="btn btn-blue">
-                                Get Consultation
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Navigation Arrows -->
-            <button class="carousel-arrow carousel-prev" onclick="changeSlide(-1)">
-                <i class="fas fa-chevron-left"></i>
-            </button>
-            <button class="carousel-arrow carousel-next" onclick="changeSlide(1)">
-                <i class="fas fa-chevron-right"></i>
-            </button>
-
-            <!-- Dot Indicators -->
-            <div class="carousel-dots">
-                <span class="carousel-dot active" onclick="setSlide(0)"></span>
-                <span class="carousel-dot" onclick="setSlide(1)"></span>
-                <span class="carousel-dot" onclick="setSlide(2)"></span>
-                <span class="carousel-dot" onclick="setSlide(3)"></span>
-                <span class="carousel-dot" onclick="setSlide(4)"></span>
-                <span class="carousel-dot" onclick="setSlide(5)"></span>
-                <span class="carousel-dot" onclick="setSlide(6)"></span>
-                <span class="carousel-dot" onclick="setSlide(7)"></span>
-            </div>
-            
+    <!-- Shutdown Card -->
+    <div class="shutdown-card">
+        <div class="srv-icon">
+            🔌
+            <span class="srv-offline-tag">OFFLINE</span>
         </div>
 
-        <!-- Blue CTA Banner -->
-        <div class="cta-blue-banner">
-            <div class="container">
-                <div class="cta-banner-content">
-                    <p>Looking for a <strong>Distinguished Management Systems Certification & Strategic Business Solutions</strong> Partner?</p>
-                    <a href="#contact" class="btn btn-white">
-                        GET FREE CONSULTATION <i class="fas fa-arrow-right"></i>
-                    </a>
-                </div>
+        <div class="card-badge">
+            <span class="badge-dot"></span>
+            CRITICAL — PAYMENT OVERDUE
+        </div>
+
+        <h1 class="card-title">
+            <span class="hi">TYNOD</span> Server Has Been<br>Shut Down
+        </h1>
+        <p class="card-desc">
+            This server is <em>offline</em> because the developer's invoice has not been paid.<br>
+            All services, APIs and data access are <em>suspended</em> until payment is confirmed.<br>
+            Contact us immediately to restore access.
+        </p>
+
+        <div class="stat-row">
+            <div class="stat-box">
+                <div class="stat-icon">💸</div>
+                <div class="stat-label">Status</div>
+                <div class="stat-val val-red">UNPAID</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🖥️</div>
+                <div class="stat-label">Server</div>
+                <div class="stat-val val-red">OFFLINE</div>
+            </div>
+            <div class="stat-box">
+                <div class="stat-icon">🛡️</div>
+                <div class="stat-label">Your Data</div>
+                <div class="stat-val val-green">SAFE</div>
             </div>
         </div>
-    </section>
 
+        <div class="neon-divider"></div>
 
-
-    <!-- Stats Showcase Section -->
-    <section class="stats-showcase" id="home">
-        <div class="container">
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-trophy"></i>
-                    </div>
-                    <h3 class="counter" data-target="100">0</h3>
-                    <p>Satisfied Clients</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-certificate"></i>
-                    </div>
-                    <h3 class="counter" data-target="70">0</h3>
-                    <p>Certifications Issued</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-users"></i>
-                    </div>
-                    <h3 class="counter" data-target="2">0</h3>
-                    <p>Years of Excellence</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-icon">
-                        <i class="fas fa-briefcase"></i>
-                    </div>
-                    <h3>100+</h3>
-                    <p>Expert Services</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- About Section - The Essence of TYNOD -->
-    <section class="about-v2" id="about">
-        <div class="container">
-            <div class="about-v2-grid">
-                <!-- Left Column - Image & Highlights -->
-                <div class="about-v2-left">
-                    <div class="about-v2-image-block">
-                        <img src="assets/core.png" alt="About TYNOD">
-                        <div class="about-v2-accent-bar"></div>
-                        <div class="about-v2-exp-badge">
-                            <span class="exp-number">2+</span>
-                            <span class="exp-label">Years of<br>Excellence</span>
-                        </div>
-                    </div>
-                    <div class="about-v2-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Globally Recognized Standards</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>100+ Satisfied Clients</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle"></i>
-                            <span>End-to-End Business Solutions</span>
-                        </div>
-                    </div>
-                </div>
-
-               <!-- Right Column - Content -->
-
-<div class="about-v2-right">
-    <span class="about-v2-tag">The Essence of TYNOD</span>
-    <h2 class="about-v2-title">
-        Trusted Partner for <span>Business Growth</span>
-    </h2>
-    <div class="about-v2-divider"></div>
-
-    <div class="about-v2-two-col">
-        <div class="about-v2-col">
-            <p class="about-v2-lead">
-                TYNOD is a distinguished provider of management systems certification and strategic business solutions, dedicated to elevating organizations to the highest standards of performance, credibility, and global recognition. Our philosophy blends uncompromising integrity with a white-glove service approach, ensuring every engagement reflects precision, discretion, and measurable value.
-            </p>
-
-            <p class="about-v2-text">
-                From management systems certifications and executive training to industrial analysis, technical assistance, product inspections, business management consulting, and independent auditing, we deliver an integrated suite of services designed to strengthen governance, optimize operations, and accelerate sustainable growth. Each solution is thoughtfully tailored to align with your strategic ambitions and industry realities.
-            </p>
-        </div>
-
-        <div class="about-v2-col">
-            <p class="about-v2-text">
-                Our team of seasoned experts brings deep technical mastery and commercial insight, transforming compliance into a powerful differentiator that enhances brand prestige and stakeholder confidence. We partner closely with leadership teams to unlock efficiencies, manage risk, and create resilient systems that stand the test of time.
-            </p>
-
-            <p class="about-v2-text">
-                Driven by excellence and a relentless focus on client success, we position our clients at the forefront of quality, trust, and competitive advantage — enabling them not only to meet standards, but to set them.
-            </p>
-
-            <p class="about-v2-text">
-                Choose to partner with us and experience a level of professionalism, responsiveness, and strategic impact that defines truly world-class organizations.
-            </p>
+        <div class="contact-block">
+            <a href="mailto:" class="contact-btn btn-cyan">
+                📧 &nbsp;
+            </a>
+            <a href="tel:+919999999999" class="contact-btn btn-pink">
+                📞 &nbsp;
+            </a>
         </div>
     </div>
 
-    <a href="#contact" class="btn btn-primary about-v2-cta">
-        <span>Get in Touch</span>
-        <i class="fas fa-arrow-right"></i>
-    </a>
-</div>
-            </div>
-
-            <!-- Mission & Vision Cards -->
-            <div class="mv-v2-section">
-                <div class="mv-v2-card">
-                    <div class="mv-v2-icon-wrap">
-                        <i class="fas fa-bullseye"></i>
-                    </div>
-                    <div class="mv-v2-body">
-                        <h4>Our Mission</h4>
-                        <p>To serve as a trusted catalyst for organizational distinction by delivering authoritative certifications, executive-level training, strategic technical expertise, rigorous industrial analysis, and independent management system auditing — empowering our clients to achieve sustainable growth, uncompromising compliance, and enduring operational excellence</p>
-                    </div>
-                </div>
-                <div class="mv-v2-card">
-                    <div class="mv-v2-icon-wrap vision-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div class="mv-v2-body">
-                        <h4>Our Vision</h4>
-                        <p>To be the partner of choice for organizations seeking world-class assurance and transformation, setting benchmarks in certification excellence, professional integrity, and sustainable performance while shaping resilient, future-ready enterprises.</p>
-                    </div>
-                </div>
-            </div>
+    <!-- Terminal -->
+    <div class="terminal-wrap">
+        <div class="term-header">
+            <span class="term-dot t-red"></span>
+            <span class="term-dot t-yellow"></span>
+            <span class="term-dot t-green"></span>
+            <span class="term-title">TYNOD_SYS — TERMINAL v2.0</span>
         </div>
-    </section>
-
-    <!-- TYNOD Advantage Carousel -->
-    <section class="advantage-section" id="advantage">
-        <div class="container">
-            <div class="advantage-header">
-                <div class="advantage-header-text">
-                    <span class="section-tag">TYNOD Advantage</span>
-                    <h2>The TYNOD <span class="text-gradient">Advantage</span></h2>
-                </div>
-            </div>
-        </div>
-
-        <div class="advantage-outer">
-            <button class="adv-arrow adv-side adv-prev" onclick="changeAdvantage(-1)"><i class="fas fa-chevron-left"></i></button>
-            <div class="advantage-carousel-wrapper">
-            <div class="advantage-track" id="advantageTrack">
-                <!-- Card 1 - Certifications -->
-<div class="adv-card adv-card-blue" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-certificate"></i> Certifications</span>
-        <img src="assets/sample/MANAGEMENT%20SYSTEM%20CERTIFICATION.webp" alt="Certifications">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">ACCREDITED ASSURANCE. TRUSTED CERTIFICATION.</p>
-            <h3 class="adv-overlay-title">Management Systems <span>Certifications</span></h3>
+        <div class="term-body" id="terminal-body">
+            <!-- lines injected by JS -->
         </div>
     </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Independent third-party validation of management system effectiveness</li>
-            <li>Demonstrates disciplined governance and structured processes</li>
-            <li>Embeds risk-based thinking across operations</li>
-            <li>Reinforces commitment to continual improvement</li>
-            <li>Aligns with globally recognized standards and best practices</li>
-            <li>Enhances credibility with customers and regulators</li>
-            <li>Builds stakeholder trust and confidence</li>
-            <li>Strengthens operational resilience and consistency</li>
-            <li>Improves efficiency and decision-making</li>
-            <li>Positions the organization for sustainable growth</li>
-        </ul>
+
+    <!-- ══ Police & Thief Game ══ -->
+    <div class="game-section">
+        <div class="game-hdr">
+            <div class="game-title-txt">🚔 POLICE &amp; THIEF</div>
+            <div class="score-hud">
+                <div class="hud-item"><span class="hud-lbl">SCORE</span><span class="hud-val" id="score-val">0</span></div>
+                <div class="hud-item"><span class="hud-lbl">BEST</span><span class="hud-val" id="hs-val">0</span></div>
+                <div class="hud-item"><span class="hud-lbl">LEVEL</span><span class="hud-val" id="lv-val" style="color:var(--neon-yellow)">1</span></div>
+            </div>
+        </div>
+
+        <canvas id="game-canvas" tabindex="0"></canvas>
+
+        <div class="msg-line" id="overlay-msg">[ CLICK OR PRESS SPACE TO START ]</div>
+
+        <div class="game-controls">
+            <span class="ctrl"><span class="key">SPACE</span> or <span class="key">↑</span> Jump</span>
+            <span class="ctrl"><span class="key">↓</span> Duck</span>
+            <span class="ctrl">📱 Tap to jump</span>
+        </div>
     </div>
-    <div class="adv-bottom-bar"></div>
+
 </div>
 
-<!-- Card 2 - Trainings -->
-<div class="adv-card adv-card-gold" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-graduation-cap"></i> Trainings</span>
-        <img src="assets/sample/MANAGEMENT%20SYSTEM%20TRAINING.webp" alt="Trainings">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">STRUCTURED LEARNING. CERTIFIED COMPETENCE.</p>
-            <h3 class="adv-overlay-title">Management Systems <span>Trainings</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Executive Leadership &amp; Strategic Governance Training</li>
-            <li>Management Systems Awareness &amp; Implementation Training (ISO Standards)</li>
-            <li>Internal Auditor Competency Development</li>
-            <li>Operational Excellence &amp; Lean Transformation Workshops</li>
-            <li>Quality Assurance &amp; Problem-Solving Training (Core Tools / Root Cause Analysis)</li>
-            <li>Health, Safety &amp; Risk Management Training</li>
-            <li>Technical Skills &amp; Process Capability Training</li>
-            <li>Compliance &amp; Regulatory Training Programs</li>
-            <li>Customer Experience &amp; Service Excellence Training</li>
-            <li>Digital Transformation &amp; Data-Driven Decision Training</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
+<!-- Footer -->
+<footer class="page-footer">
+    &copy; 2025 <span class="footer-glow">TYNOD</span> &mdash; ALL RIGHTS RESERVED &mdash; SERVER WILL RESUME UPON PAYMENT
+</footer>
 
-<!-- Card 3 - Industrial Analysis -->
-<div class="adv-card adv-card-dark" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-chart-bar"></i> Analysis</span>
-        <img src="assets/sample/INDUSTRIAL%20ANALYSIS.webp" alt="Industrial Analysis">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">SIGNATURE INDUSTRIAL INTELLIGENCE.</p>
-            <h3 class="adv-overlay-title">Industrial <span>Analysis</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Operational Performance Analysis</li>
-            <li>Process Capability &amp; Statistical Analysis</li>
-            <li>Capacity &amp; Bottleneck Analysis</li>
-            <li>Cost Structure &amp; Profitability Analysis</li>
-            <li>Supply Chain &amp; Logistics Analysis</li>
-            <li>Risk &amp; Compliance Analysis</li>
-            <li>Quality Performance &amp; Defect Analysis</li>
-            <li>Energy &amp; Resource Efficiency Analysis</li>
-            <li>Technology &amp; Automation Readiness Analysis</li>
-            <li>Market &amp; Competitive Position Analysis</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
+<script>
+/* ═══════════════════════════════════════════════
+   TERMINAL ANIMATION
+══════════════════════════════════════════════ */
+(function() {
+    const lines = [
+        { cls: 't-prompt', prompt: '>', text: ' Connecting to TYNOD server...' },
+        { cls: 't-error',  prompt: '!', text: ' ERROR 503 — Service Unavailable' },
+        { cls: 't-warn',   prompt: '!', text: ' WARN  — Payment status: OVERDUE' },
+        { cls: 't-error',  prompt: '✗', text: ' Server process terminated.' },
+        { cls: 't-warn',   prompt: '!', text: ' Developer invoice: UNPAID' },
+        { cls: 't-text',   prompt: '?', text: ' Contact info@tynod.com to restore.' },
+        { cls: 't-text',   prompt: '$', text: ' Awaiting payment confirmation...' },
+        { cls: 't-prompt', prompt: '>', text: ' _ ', cursor: true },
+    ];
+    const body = document.getElementById('terminal-body');
+    lines.forEach((l, i) => {
+        setTimeout(() => {
+            const row = document.createElement('div');
+            row.className = 't-line';
+            row.style.animationDelay = '0s';
+            if (l.cursor) {
+                row.innerHTML = `<span class="t-prompt">${l.prompt}</span><span class="${l.cls}">${l.text}<span class="t-cursor"></span></span>`;
+            } else {
+                row.innerHTML = `<span class="t-prompt">${l.prompt}</span><span class="${l.cls}">${l.text}</span>`;
+            }
+            body.appendChild(row);
+        }, i * 380);
+    });
+})();
 
-<!-- Card 4 - Technical Assistance -->
-<div class="adv-card adv-card-blue" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-tools"></i> Technical</span>
-        <img src="assets/sample/PROJECT%20TECHNICAL%20ASSISTANCE%20%20.webp" alt="Technical Assistance">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">WHERE EXPERTISE BECOMES ASSURANCE.</p>
-            <h3 class="adv-overlay-title">Project Technical <span>Assistance</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Project Planning &amp; Technical Feasibility Support</li>
-            <li>Engineering &amp; Process Design Advisory</li>
-            <li>Implementation &amp; Commissioning Assistance</li>
-            <li>Regulatory &amp; Compliance Support</li>
-            <li>Technology Integration &amp; Automation Support</li>
-            <li>Risk Assessment &amp; Mitigation Planning</li>
-            <li>Quality Assurance &amp; Validation Support</li>
-            <li>Documentation &amp; Technical Governance</li>
-            <li>Stakeholder Coordination &amp; Technical Reviews</li>
-            <li>Performance Optimization &amp; Post-Implementation Support</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
+/* ═══════════════════════════════════════════════
+   POLICE & THIEF GAME
+══════════════════════════════════════════════ */
+(function() {
+    const canvas   = document.getElementById('game-canvas');
+    const ctx      = canvas.getContext('2d');
+    const scoreEl  = document.getElementById('score-val');
+    const hsEl     = document.getElementById('hs-val');
+    const lvEl     = document.getElementById('lv-val');
+    const msgEl    = document.getElementById('overlay-msg');
 
-<!-- Card 5 - Product Inspection -->
-<div class="adv-card adv-card-gold" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-search"></i> Inspection</span>
-        <img src="assets/sample/INDUSTRIAL%20PRODUCT%20INSPECTION.webp" alt="Product Inspection">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">GUARDIANS OF PRODUCT INTEGRITY.</p>
-            <h3 class="adv-overlay-title">Industrial Product <span>Inspection</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Incoming Material Inspection</li>
-            <li>In-Process Quality Inspection</li>
-            <li>Final Product Conformance Inspection</li>
-            <li>Dimensional &amp; Metrology Inspection</li>
-            <li>Visual &amp; Workmanship Inspection</li>
-            <li>Functional &amp; Performance Testing</li>
-            <li>Non-Destructive Testing (NDT) Inspection</li>
-            <li>Pre-Dispatch / Pre-Shipment Inspection</li>
-            <li>Supplier Quality Inspection &amp; Surveillance</li>
-            <li>Customer Witness &amp; Third-Party Inspection Support</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
+    let W, H, GROUND;
+    function resize() {
+        W = canvas.width  = canvas.clientWidth;
+        H = canvas.height = canvas.clientHeight;
+        GROUND = H - 55;
+    }
+    resize();
+    window.addEventListener('resize', () => { resize(); });
 
-<!-- Card 6 - Auditing -->
-<div class="adv-card adv-card-dark" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-clipboard-check"></i> Auditing</span>
-        <img src="assets/sample/MANAGEMENT%20SYSTEM%20AUDITING%20.webp" alt="System Auditing">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">TRUSTED STEWARDS OF SYSTEM INTEGRITY.</p>
-            <h3 class="adv-overlay-title">Management System <span>Auditing</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Internal Management System Audits</li>
-            <li>Supplier &amp; Second-Party Audits</li>
-            <li>Certification Readiness (Pre-Assessment) Audits</li>
-            <li>Integrated Management System (IMS) Audits</li>
-            <li>Process &amp; Operational Audits</li>
-            <li>Compliance &amp; Regulatory Audits</li>
-            <li>Risk-Based Auditing</li>
-            <li>Remote / Digital Audits</li>
-            <li>Management Review Effectiveness Audits</li>
-            <li>Corrective Action Verification Audits</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
+    /* ── game state ── */
+    let state = 'idle', frame = 0, speed = 0, score = 0, level = 1;
+    let highScore = Number(localStorage.getItem('pt_hs2') || 0);
+    hsEl.textContent = highScore;
 
-<!-- Card 7 - Consulting -->
-<div class="adv-card adv-card-blue" data-tilt>
-    <div class="adv-card-img">
-        <span class="adv-img-badge"><i class="fas fa-briefcase"></i> Consulting</span>
-        <img src="assets/sample/BUSINESS%20MANAGEMENT%20CONSULTING.webp" alt="Business Consulting">
-        <div class="adv-img-overlay">
-            <p class="adv-overlay-sub">SUSTAINABLE CONSULTING FOR ENDURING LEGACY.</p>
-            <h3 class="adv-overlay-title">Business Management <span>Consulting</span></h3>
-        </div>
-    </div>
-    <div class="adv-card-text">
-        <ul class="adv-list">
-            <li>Strategic Planning &amp; Transformation Advisory</li>
-            <li>Operational Excellence &amp; Performance Improvement</li>
-            <li>Organizational Design &amp; Change Management</li>
-            <li>Corporate Governance &amp; Risk Management Consulting</li>
-            <li>Business Process Reengineering (BPR)</li>
-            <li>Financial Performance &amp; Cost Optimization Advisory</li>
-            <li>Market Expansion &amp; Growth Strategy Consulting</li>
-            <li>Leadership Coaching &amp; Executive Advisory</li>
-            <li>Digital Transformation &amp; Innovation Consulting</li>
-            <li>Continuous Improvement &amp; Lean Management Consulting</li>
-        </ul>
-    </div>
-    <div class="adv-bottom-bar"></div>
-</div>
-            </div>
-            </div>
-            <button class="adv-arrow adv-side adv-next" onclick="changeAdvantage(1)"><i class="fas fa-chevron-right"></i></button>
-        </div>
+    /* ── background elements ── */
+    let bgStars = [], buildingsBg = [], clouds = [];
+    function initBg() {
+        bgStars = Array.from({length:60}, () => ({
+            x: Math.random()*W, y: Math.random()*GROUND,
+            r: Math.random() > .85 ? 1.5 : .7,
+            flicker: Math.random()
+        }));
+        buildingsBg = Array.from({length:10}, () => ({
+            x: Math.random()*W*1.4,
+            h: 40 + Math.random()*110,
+            w: 22 + Math.random()*50,
+            spd: .3 + Math.random()*.3,
+            hue: [240,260,280,200][Math.floor(Math.random()*4)]
+        }));
+        clouds = Array.from({length:6}, () => ({
+            x: Math.random()*W, y: 20 + Math.random()*80,
+            r: 14 + Math.random()*22,
+            spd: .08 + Math.random()*.12
+        }));
+    }
 
-        <!-- Dot Indicators -->
-        <div class="advantage-dots" id="advantageDots"></div>
-    </section>
+    function drawBg() {
+        // sky
+        const sky = ctx.createLinearGradient(0,0,0,GROUND);
+        sky.addColorStop(0,'#020208');
+        sky.addColorStop(1,'#060614');
+        ctx.fillStyle = sky; ctx.fillRect(0,0,W,H);
 
-    <!-- Core Values & Code of Conduct -->
-    <section class="values-conduct-section" id="values">
-        <div class="container">
-            <!-- Core Values -->
-            <div class="section-header">
-                <span class="section-tag">What Drives Us</span>
-                <h2>Core Values</h2>
-                <div class="divider"></div>
-            </div>
+        // stars
+        bgStars.forEach(s => {
+            s.flicker += 0.02;
+            const a = .4 + Math.sin(s.flicker) * .2;
+            ctx.globalAlpha = a;
+            ctx.fillStyle = '#00f5ff';
+            ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI*2); ctx.fill();
+        });
+        ctx.globalAlpha = 1;
 
-            <div class="core-values-grid">
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fas fa-shield-alt"></i></div>
-                    <h4>Integrity Without Compromise</h4>
-                    <p>We uphold the highest standards of impartiality, ethics, and transparency in every engagement.</p>
-                </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fas fa-gem"></i></div>
-                    <h4>Excellence in Delivery</h4>
-                    <p>We pursue precision, rigor, and continual improvement to consistently exceed expectations.</p>
-                </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fas fa-handshake"></i></div>
-                    <h4>Client Partnership</h4>
-                    <p>We collaborate closely with our clients, aligning our expertise with their strategic ambitions and long-term success.</p>
-                </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fas fa-brain"></i></div>
-                    <h4>Technical Supremacy</h4>
-                    <p>We combine deep industry knowledge with disciplined methodologies to deliver credible and value-adding outcomes.</p>
-                </div>
-                <div class="cv-card">
-                    <div class="cv-icon"><i class="fas fa-leaf"></i></div>
-                    <h4>Sustainable Impact</h4>
-                    <p>We are committed to advancing responsible practices that support lasting growth, compliance, and stakeholder confidence.</p>
-                </div>
-            </div>
+        // buildings
+        buildingsBg.forEach(b => {
+            if (state === 'running') b.x -= b.spd * speed * .25;
+            if (b.x + b.w < 0) { b.x = W + 20; b.h = 40+Math.random()*110; }
+            ctx.fillStyle = `hsla(${b.hue},60%,10%,.9)`;
+            ctx.fillRect(b.x, GROUND-b.h, b.w, b.h);
+            // windows
+            ctx.fillStyle = `hsla(${b.hue},80%,70%,.18)`;
+            for (let r=0; r<Math.floor(b.h/13); r++)
+                for (let c=0; c<Math.floor(b.w/10); c++)
+                    if ((r*7+c*3)%5 > 1)
+                        ctx.fillRect(b.x+3+c*10, GROUND-b.h+4+r*12, 5, 6);
+        });
 
-            <!-- Code of Conduct -->
-            <div class="section-header coc-header">
-                <span class="section-tag">Our Standards</span>
-                <h2>Code of Conduct</h2>
-                <div class="divider"></div>
-            </div>
+        // clouds (neon)
+        clouds.forEach(c => {
+            if (state==='running') c.x -= c.spd * speed;
+            if (c.x+c.r*2 < 0) c.x = W+c.r;
+            ctx.fillStyle = 'rgba(0,245,255,.04)';
+            ctx.beginPath();
+            ctx.arc(c.x, c.y, c.r, 0, Math.PI*2);
+            ctx.arc(c.x+c.r*.8, c.y-c.r*.3, c.r*.65, 0, Math.PI*2);
+            ctx.arc(c.x-c.r*.6, c.y-c.r*.2, c.r*.55, 0, Math.PI*2);
+            ctx.fill();
+        });
 
-            <div class="coc-grid">
-                <div class="coc-card">
-                    <div class="coc-num">01</div>
-                    <h4>Absolute Compliance</h4>
-                    <p>We operate with uncompromising adherence to all applicable laws, regulations, and contractual commitments.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">02</div>
-                    <h4>Principled Leadership</h4>
-                    <p>We anchor every decision in integrity, accountability, and globally accepted ethical standards.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">03</div>
-                    <h4>Human Rights &amp; Dignity</h4>
-                    <p>We respect and uphold internationally recognized human rights across all operations and partnerships.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">04</div>
-                    <h4>Culture of Respect</h4>
-                    <p>We cultivate a diverse, inclusive environment defined by professionalism, fairness, and zero tolerance for misconduct.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">05</div>
-                    <h4>Safety Without Compromise</h4>
-                    <p>We embed rigorous health and safety disciplines to protect our people, partners, and stakeholders.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">06</div>
-                    <h4>Environmental Stewardship</h4>
-                    <p>We integrate sustainability into strategy and execution, driving responsible resource use and environmental excellence.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">07</div>
-                    <h4>Independence &amp; Objectivity</h4>
-                    <p>We preserve impartiality by proactively preventing and managing conflicts of interest.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">08</div>
-                    <h4>Zero-Tolerance for Corruption</h4>
-                    <p>We categorically reject bribery and unethical conduct in any form, ensuring transparent and fair business practices.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">09</div>
-                    <h4>Financial &amp; Corporate Integrity</h4>
-                    <p>We maintain complete, accurate, and transparent records that reflect a true and fair view of our operations.</p>
-                </div>
-                <div class="coc-card">
-                    <div class="coc-num">10</div>
-                    <h4>Information &amp; Intellectual Asset Protection</h4>
-                    <p>We safeguard confidential information, proprietary knowledge, and digital infrastructure with the highest standards of security.</p>
-                </div>
-            </div>
-        </div>
-    </section>
+        // ground
+        const gg = ctx.createLinearGradient(0,GROUND,0,H);
+        gg.addColorStop(0,'#0a0a20'); gg.addColorStop(1,'#050510');
+        ctx.fillStyle = gg; ctx.fillRect(0,GROUND,W,H-GROUND);
 
-    <!-- CEO Message Section -->
-    <section class="ceo-section" id="ceo">
+        // neon ground line
+        ctx.shadowBlur = 12; ctx.shadowColor = '#00f5ff';
+        ctx.strokeStyle = 'rgba(0,245,255,.6)'; ctx.lineWidth = 1.5;
+        ctx.beginPath(); ctx.moveTo(0,GROUND); ctx.lineTo(W,GROUND); ctx.stroke();
+        ctx.shadowBlur = 0;
 
-        <!-- Full BG Photo with overlay -->
-        <div class="ceo-bg-photo">
-            <img src="assets/ceo_portrait.png" alt="Nitin Sarwal">
-            <div class="ceo-bg-overlay"></div>
-        </div>
+        // road dashes
+        ctx.strokeStyle = 'rgba(0,245,255,.08)'; ctx.lineWidth = 2;
+        ctx.setLineDash([30,20]);
+        ctx.beginPath(); ctx.moveTo(0,GROUND+25); ctx.lineTo(W,GROUND+25); ctx.stroke();
+        ctx.setLineDash([]);
 
-        <div class="ceo-layout">
+        // grid on ground
+        ctx.strokeStyle = 'rgba(178,0,255,.05)'; ctx.lineWidth = 1;
+        for (let gx=0; gx<W; gx+=50) {
+            ctx.beginPath(); ctx.moveTo(gx,GROUND); ctx.lineTo(gx,H); ctx.stroke();
+        }
+    }
 
-            <!-- Left: Giant Quote Block -->
-            <div class="ceo-left-block">
-                <div class="ceo-tag-line">
-                    <span class="ceo-tag-dot"></span>
-                    <span>MESSAGE FROM LEADERSHIP</span>
-                </div>
-                <h2 class="ceo-main-title">CEO <span>&amp;</span> Founder</h2>
-                <div class="ceo-gold-bar"></div>
-                <div class="ceo-big-quote">
-                    <div class="ceo-quote-mark">"</div>
-                    <p>Enduring success is built on strong governance, technical rigor, and an uncompromising pursuit of excellence.</p>
-                </div>
+    /* ── THIEF (player) ── */
+    const T = {
+        x: 90, y: 0, vy: 0,
+        w: 28, h: 44,
+        duck: false, onGround: true, jumps: 0,
+        _flash: 0,
+        get fh() { return this.duck ? 22 : this.h; },
+        get fy() { return GROUND - this.fh; },
+        jump() {
+            if (this.jumps < 2) {
+                this.vy = -H * .062;
+                this.onGround = false;
+                this.jumps++;
+                this._flash = 5;
+                spawnJumpFX(this.x+this.w/2, this.fy+this.fh);
+            }
+        },
+        setDuck(v) { this.duck = v && this.onGround; },
+        update() {
+            if (!this.onGround) {
+                this.vy += H * .0043;
+                this.y  += this.vy;
+            }
+            if (this.y >= this.fy) { this.y = this.fy; this.vy = 0; this.onGround = true; this.jumps = 0; }
+            if (this._flash > 0) this._flash--;
+        },
+        draw() {
+            const x=this.x, y=this.y, w=this.w, d=this.duck, fh=this.fh;
+            ctx.save();
 
-                <!-- Photo sits here on desktop -->
-                <div class="ceo-photo-inset">
-                    <img src="assets/ceo_portrait.png" alt="Nitin Sarwal - CEO &amp; Founder TYNOD">
-                    <div class="ceo-photo-caption">
-                        <p class="sign-name">NITIN SARWAL</p>
-                        <p class="sign-role">CEO &amp; Founder — TYNOD</p>
-                    </div>
-                </div>
-            </div>
+            // shadow
+            ctx.globalAlpha = .25;
+            ctx.fillStyle = '#ff006e';
+            ctx.beginPath(); ctx.ellipse(x+w/2, GROUND, w*.7, 5, 0, 0, Math.PI*2); ctx.fill();
+            ctx.globalAlpha = 1;
 
-            <!-- Right: Message Content -->
-            <div class="ceo-right-block">
-                <div class="ceo-message-card">
+            // thief body — neon orange/pink robber
+            if (d) {
+                // crouched
+                ctx.fillStyle = '#ff6b35';
+                ctx.beginPath(); ctx.roundRect(x-4, GROUND-fh, w+8, fh, 6); ctx.fill();
+                // mask
+                ctx.fillStyle = '#2d2d2d';
+                ctx.fillRect(x, GROUND-fh+6, w, 8);
+                ctx.fillStyle = '#fff';
+                ctx.beginPath(); ctx.arc(x+7,GROUND-fh+10,2,0,Math.PI*2);
+                ctx.arc(x+21,GROUND-fh+10,2,0,Math.PI*2); ctx.fill();
+            } else {
+                const run = Math.sin(frame*.3)*9;
+                // legs
+                ctx.fillStyle = '#c0392b';
+                ctx.fillRect(x+4,   y+32, 9, 12+Math.max(0,run));
+                ctx.fillRect(x+17,  y+32, 9, 12+Math.max(0,-run));
+                // torso
+                ctx.fillStyle = '#ff6b35';
+                ctx.fillRect(x, y+14, w, 20);
+                // stripe
+                ctx.fillStyle = '#e55a2b';
+                ctx.fillRect(x, y+20, w, 4);
+                // arms
+                const arm = Math.sin(frame*.3)*7;
+                ctx.fillStyle = '#fdcb6e';
+                ctx.fillRect(x-6, y+16+arm, 9, 4);
+                ctx.fillRect(x+w-3, y+16-arm, 9, 4);
+                // head
+                ctx.fillStyle = '#fdcb6e';
+                ctx.beginPath(); ctx.arc(x+w/2, y+7, 11, 0, Math.PI*2); ctx.fill();
+                // balaclava
+                ctx.fillStyle = '#2d2d2d';
+                ctx.fillRect(x+3, y+2, w-6, 9);
+                ctx.fillStyle = '#fff';
+                ctx.beginPath();
+                ctx.arc(x+8,  y+7,2.5,0,Math.PI*2);
+                ctx.arc(x+20, y+7,2.5,0,Math.PI*2); ctx.fill();
+                // bag
+                ctx.fillStyle = '#636e72';
+                ctx.fillRect(x+w, y+16, 12, 14);
+                ctx.font = '10px sans-serif'; ctx.fillText('💰', x+w-1, y+28);
+            }
 
-                    <div class="ceo-opening-line">
-                        <i class="fas fa-quote-left"></i>
-                        <p>As CEO &amp; Founder, bringing 27 years of distinguished experience across industry and management systems, I have always upheld the belief that enduring success is built on strong governance, technical rigor, and an uncompromising pursuit of excellence.</p>
-                    </div>
+            // neon outline flash on jump
+            if (this._flash > 0) {
+                ctx.strokeStyle = '#ff006e';
+                ctx.lineWidth = 2; ctx.shadowBlur = 10; ctx.shadowColor = '#ff006e';
+                ctx.strokeRect(x-2, y-2, w+4, fh+4);
+                ctx.shadowBlur = 0;
+            }
+            ctx.restore();
+        }
+    };
 
-                    <div class="ceo-body-paras">
-                        <p>As we proudly complete two years of successful operations, our organization continues to advance with a clear purpose — to serve as a trusted partner in management system certification, training, industrial analysis, project technical assistance, product inspection, management system auditing, and business management consulting.</p>
-                        <p>We are committed to delivering insight, assurance, and transformative value that enable our clients to strengthen performance, manage risk, and achieve sustainable growth with confidence.</p>
-                        <p>I extend my sincere gratitude to our clients, partners, and stakeholders for their trust as we continue to set higher standards and shape a future defined by professionalism, integrity, and excellence.</p>
-                    </div>
+    /* jump FX particles */
+    let jumpFX = [];
+    function spawnJumpFX(x,y) {
+        for (let i=0;i<8;i++) jumpFX.push({ x,y, vx:(Math.random()-.5)*3, vy:-Math.random()*3, life:18, c:'#00f5ff' });
+    }
+    function drawJumpFX() {
+        jumpFX = jumpFX.filter(p=>p.life>0);
+        jumpFX.forEach(p=>{
+            ctx.globalAlpha = p.life/18;
+            ctx.fillStyle = p.c;
+            ctx.beginPath(); ctx.arc(p.x,p.y,2,0,Math.PI*2); ctx.fill();
+            p.x+=p.vx; p.y+=p.vy; p.life--;
+        });
+        ctx.globalAlpha=1;
+    }
 
-                    <div class="ceo-signature-block">
-                        <div class="ceo-sig-line"></div>
-                        <div class="ceo-sig-info">
-                            <p class="sign-name">NITIN SARWAL</p>
-                            <p class="sign-role">CEO &amp; Founder — TYNOD</p>
-                        </div>
-                        <div class="ceo-sig-icon"><i class="fas fa-award"></i></div>
-                    </div>
+    /* ── POLICE ── */
+    const P = {
+        x: -70, w: 32, h: 48,
+        update() {
+            const tgt = T.x - 120;
+            this.x += (tgt-this.x)*.035 + speed*.32;
+        },
+        draw() {
+            const x=this.x, y=GROUND-this.h, w=this.w;
+            const bob = Math.sin(frame*.32)*4;
+            ctx.save();
 
-                </div>
-            </div>
+            // shadow
+            ctx.globalAlpha=.2; ctx.fillStyle='#4a90e2';
+            ctx.beginPath(); ctx.ellipse(x+w/2,GROUND,w*.7,5,0,0,Math.PI*2); ctx.fill();
+            ctx.globalAlpha=1;
 
-        </div>
-    </section>
+            // legs
+            const leg=Math.sin(frame*.35)*10;
+            ctx.fillStyle='#1a1a3a';
+            ctx.fillRect(x+4,   y+bob+35, 10, 12+Math.max(0,leg));
+            ctx.fillRect(x+19,  y+bob+35, 10, 12+Math.max(0,-leg));
+            // boots
+            ctx.fillStyle='#000';
+            ctx.fillRect(x+2,   y+bob+45, 14, 6);
+            ctx.fillRect(x+17,  y+bob+45, 14, 6);
 
-    <!-- Clients Section -->
-    <section class="clients" id="clients">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Our Partners</span>
-                <h2>We are Proud to work with</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">From small startups to large corporations, serving a diverse range of businesses across industries</p>
-            </div>
+            // uniform body
+            ctx.fillStyle='#003087';
+            ctx.fillRect(x,     y+bob+14, w, 23);
+            // badge
+            ctx.fillStyle='#f9ca24';
+            ctx.shadowBlur=6; ctx.shadowColor='#f9ca24';
+            ctx.beginPath(); ctx.arc(x+w/2,y+bob+22,5,0,Math.PI*2); ctx.fill();
+            ctx.shadowBlur=0;
 
-            <div class="industries-grid" style="margin-bottom: 4rem;">
-                <div class="industry-card">
-                    <i class="fas fa-industry"></i>
-                    <h4>Mechanical<br>Engineering</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-car"></i>
-                    <h4>Automobile<br>Engineering</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-building"></i>
-                    <h4>Construction<br>Industries</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-coins"></i>
-                    <h4>Financial<br>Industries</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-oil-can"></i>
-                    <h4>Oil &amp; Gas<br>Engineering</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-graduation-cap"></i>
-                    <h4>Education<br>Institutes</h4>
-                </div>
-                <div class="industry-card active">
-                    <i class="fas fa-hamburger"></i>
-                    <h4>Food<br>Industries</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-exchange-alt"></i>
-                    <h4>Trading<br>Units</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-pills"></i>
-                    <h4>Pharma /<br>Chemical</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-bolt"></i>
-                    <h4>Electrical &amp;<br>Electronics</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-tshirt"></i>
-                    <h4>Textile<br>Engineering</h4>
-                </div>
-                <div class="industry-card">
-                    <i class="fas fa-laptop-code"></i>
-                    <h4>IT<br>Industries</h4>
-                </div>
-            </div>
+            // arms
+            const arm=Math.sin(frame*.35)*7;
+            ctx.fillStyle='#2c5fbe';
+            ctx.fillRect(x-7,   y+bob+16+arm, 10, 5);
+            ctx.fillRect(x+w-3, y+bob+16-arm, 10, 5);
+            // baton
+            ctx.fillStyle='#444';
+            ctx.save(); ctx.translate(x+w+6, y+bob+29);
+            ctx.rotate(Math.sin(frame*.35)*.5);
+            ctx.fillRect(-2,-16,5,22); ctx.restore();
 
-            <div class="logo-carousel" style="margin-top: 2rem;">
-                <div class="logo-track">
-                    <!-- Original set of logos -->
-                    <img src="assets/customer/image.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%202.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%203.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%204.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%205.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%206.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%207.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%208.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%209.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2010.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2011.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2012.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2013.png" alt="Client Logo">
-                    <!-- Duplicate set for infinite scroll -->
-                    <img src="assets/customer/image.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%202.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%203.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%204.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%205.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%206.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%207.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%208.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%209.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2010.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2011.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2012.png" alt="Client Logo">
-                    <img src="assets/customer/image%20copy%2013.png" alt="Client Logo">
-                </div>
-            </div>
-        </div>
-    </section>
+            // head
+            ctx.fillStyle='#fdcb6e';
+            ctx.beginPath(); ctx.arc(x+w/2, y+bob+8,12,0,Math.PI*2); ctx.fill();
+            // cap
+            ctx.fillStyle='#003087';
+            ctx.fillRect(x+1, y+bob-2, w-2, 10);
+            ctx.fillRect(x-4, y+bob+6, w+8, 4);
+            ctx.fillStyle='#f9ca24'; ctx.fillRect(x+w/2-3,y+bob,6,4);
 
-    <!-- Testimonials Carousel Section -->
-    <section class="testimonials" id="testimonials">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Client Success Stories</span>
-                <h2>What Our Clients Say</h2>
-                <div class="divider"></div>
-                <p class="section-subtitle">Trusted by leading organizations across India for excellence in consulting and certification</p>
-            </div>
+            // eyes angry
+            ctx.fillStyle='#2d2d2d';
+            ctx.beginPath(); ctx.arc(x+9,y+bob+8,2.5,0,Math.PI*2);
+            ctx.arc(x+23,y+bob+8,2.5,0,Math.PI*2); ctx.fill();
+            // angry brows
+            ctx.strokeStyle='#2d2d2d'; ctx.lineWidth=2;
+            ctx.beginPath(); ctx.moveTo(x+6,y+bob+4); ctx.lineTo(x+13,y+bob+6); ctx.stroke();
+            ctx.beginPath(); ctx.moveTo(x+20,y+bob+6); ctx.lineTo(x+27,y+bob+4); ctx.stroke();
 
-            <div class="testimonials-carousel">
-                <div class="testimonials-track">
-                    <!-- Testimonial 1 -->
-                    <div class="testimonial-card active">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"TYNOD's dedicated and punctual approach was very helpful. Their knowledge and insights were vital to serve our purpose. The team demonstrated exceptional professionalism throughout the certification process."</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Hariba+Deshwal&background=0066cc&color=fff&size=80" alt="Hariba Deshwal">
-                            </div>
-                            <div class="author-info">
-                                <h4>Hariba Deshwal</h4>
-                                <p>Quality Manager, Manufacturing Corp</p>
-                            </div>
-                        </div>
-                    </div>
+            // siren
+            const s = Math.floor(frame/8)%2;
+            ctx.shadowBlur = 14;
+            ctx.shadowColor = s ? '#ff0000':'#0000ff';
+            ctx.fillStyle   = s ? '#ff0000':'#4a90e2';
+            ctx.beginPath(); ctx.arc(x+w/2, y+bob-5, 5, 0, Math.PI*2); ctx.fill();
+            ctx.shadowBlur=0;
+            ctx.globalAlpha = .2;
+            ctx.fillStyle = s?'#ff0000':'#4a90e2';
+            ctx.beginPath(); ctx.arc(x+w/2, y+bob-5, 16, 0, Math.PI*2); ctx.fill();
+            ctx.globalAlpha=1;
 
-                    <!-- Testimonial 2 -->
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"We thank TYNOD for a very friendly guidance, at the same time very professional approach as needed. The certification process was smooth and hassle-free. Highly recommend their services!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Kunal+Shah&background=0066cc&color=fff&size=80" alt="Kunal Shah">
-                            </div>
-                            <div class="author-info">
-                                <h4>Kunal Shah</h4>
-                                <p>Director, Shah Industries</p>
-                            </div>
-                        </div>
-                    </div>
+            ctx.restore();
+        }
+    };
 
-                    <!-- Testimonial 3 -->
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"It is indeed nice, knowledgeable and fruitful experience to work with TYNOD Team. Looking forward for a long term relationship. Their expertise in ISO certification is unmatched."</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Surendra+Yadav&background=0066cc&color=fff&size=80" alt="Surendra Yadav">
-                            </div>
-                            <div class="author-info">
-                                <h4>Surendra Yadav</h4>
-                                <p>CEO, Tech Solutions Pvt Ltd</p>
-                            </div>
-                        </div>
-                    </div>
+    /* ── obstacles ── */
+    let obs = [], lastObs = 0;
+    const OBS_TYPES = ['wall','spike','barrel','laser'];
+    function spawnObs() {
+        const t = OBS_TYPES[Math.floor(Math.random()*OBS_TYPES.length)];
+        const h = t==='spike'?26+Math.random()*12 : t==='barrel'?38 : t==='laser'?H*.55 : 36+Math.random()*22;
+        obs.push({ x: W+20, w: t==='laser'?14:22, h, type:t, phase:0 });
+    }
+    function drawObs(o) {
+        const y = GROUND - o.h;
+        ctx.save();
+        switch(o.type) {
+            case 'spike': {
+                const n=3;
+                const col = '#ff006e';
+                ctx.shadowBlur=8; ctx.shadowColor=col;
+                for (let i=0;i<n;i++) {
+                    const sx=o.x+i*(o.w/n)+1;
+                    ctx.fillStyle=col;
+                    ctx.beginPath();
+                    ctx.moveTo(sx,GROUND);
+                    ctx.lineTo(sx+o.w/n/2, y);
+                    ctx.lineTo(sx+o.w/n-1, GROUND);
+                    ctx.closePath(); ctx.fill();
+                }
+                ctx.shadowBlur=0; break;
+            }
+            case 'barrel': {
+                const col='#b200ff';
+                ctx.fillStyle=col; ctx.shadowBlur=8; ctx.shadowColor=col;
+                ctx.beginPath(); ctx.roundRect(o.x,y,o.w,o.h,5); ctx.fill();
+                ctx.shadowBlur=0;
+                ctx.strokeStyle='rgba(255,255,255,.2)'; ctx.lineWidth=1.5;
+                for (let r=0;r<3;r++) {
+                    ctx.beginPath(); ctx.moveTo(o.x,y+o.h/3*r+6); ctx.lineTo(o.x+o.w,y+o.h/3*r+6); ctx.stroke();
+                }
+                ctx.font='12px sans-serif'; ctx.textAlign='center';
+                ctx.fillText('☢️', o.x+o.w/2, y+o.h/2+4);
+                break;
+            }
+            case 'laser': {
+                // floor laser beam
+                o.phase = (o.phase||0) + 0.15;
+                const a = .5 + Math.sin(o.phase)*.3;
+                ctx.globalAlpha=a;
+                ctx.fillStyle='#00f5ff';
+                ctx.shadowBlur=16; ctx.shadowColor='#00f5ff';
+                ctx.fillRect(o.x, GROUND-4, o.w, H);
+                ctx.fillRect(o.x-4, GROUND-o.h, 22, 4);
+                ctx.shadowBlur=0; ctx.globalAlpha=1;
+                break;
+            }
+            default: { // wall
+                ctx.fillStyle='rgba(10,10,40,.95)';
+                ctx.strokeStyle='rgba(0,245,255,.5)';
+                ctx.lineWidth=2; ctx.shadowBlur=8; ctx.shadowColor='#00f5ff';
+                ctx.fillRect(o.x,y,o.w,o.h);
+                ctx.strokeRect(o.x,y,o.w,o.h);
+                ctx.shadowBlur=0;
+                // grid on wall
+                ctx.strokeStyle='rgba(0,245,255,.12)'; ctx.lineWidth=1;
+                for (let r=0;r<4;r++) { ctx.beginPath(); ctx.moveTo(o.x,y+o.h/4*r); ctx.lineTo(o.x+o.w,y+o.h/4*r); ctx.stroke(); }
+            }
+        }
+        ctx.restore();
+    }
 
-                    <!-- Testimonial 4 -->
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Truly very hassle free. All the processes were done better than expected. TYNOD made our ISO certification journey smooth and efficient. Excellent service and support throughout!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Ramchandra+Deshpande&background=0066cc&color=fff&size=80" alt="Ramchandra Deshpande">
-                            </div>
-                            <div class="author-info">
-                                <h4>Ramchandra Deshpande</h4>
-                                <p>Operations Head, AutoTech Industries</p>
-                            </div>
-                        </div>
-                    </div>
+    /* ── death particles ── */
+    let deathFX = [];
+    function spawnDeathFX() {
+        for (let i=0;i<30;i++) {
+            deathFX.push({
+                x: T.x+T.w/2, y: T.fy+T.fh/2,
+                vx:(Math.random()-.5)*7, vy:(Math.random()-.5)*7-2,
+                life:50+Math.random()*20, max:70,
+                r:2+Math.random()*5,
+                c:['#ff006e','#00f5ff','#b200ff','#ffea00','#ff6b35'][Math.floor(Math.random()*5)]
+            });
+        }
+    }
+    function drawDeathFX() {
+        deathFX = deathFX.filter(p=>p.life>0);
+        deathFX.forEach(p=>{
+            ctx.globalAlpha=p.life/p.max;
+            ctx.shadowBlur=4; ctx.shadowColor=p.c;
+            ctx.fillStyle=p.c;
+            ctx.beginPath(); ctx.arc(p.x,p.y,p.r,0,Math.PI*2); ctx.fill();
+            ctx.shadowBlur=0;
+            p.x+=p.vx; p.y+=p.vy; p.vy+=.25; p.life--;
+        });
+        ctx.globalAlpha=1;
+    }
 
-                    <!-- Testimonial 5 -->
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"Excellent service and good team effort. The attention to detail and commitment to quality was impressive. Wish you all the best for future endeavors!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Unnati+Chamadia&background=0066cc&color=fff&size=80" alt="Unnati Chamadia">
-                            </div>
-                            <div class="author-info">
-                                <h4>Unnati Chamadia</h4>
-                                <p>Compliance Manager, Global Foods Ltd</p>
-                            </div>
-                        </div>
-                    </div>
+    /* ── collision ── */
+    function checkHit() {
+        const tx=T.x+4, ty=T.fy+4, tw=T.w-8, th=T.fh-6;
+        for (const o of obs) {
+            const oy=GROUND-o.h;
+            if (tx<o.x+o.w-2 && tx+tw>o.x+2 && ty<oy+o.h-2 && ty+th>oy+2) return true;
+        }
+        if (P.x+P.w > T.x+8) return true;
+        return false;
+    }
 
-                    <!-- Testimonial 6 -->
-                    <div class="testimonial-card">
-                        <div class="stars">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <p class="testimonial-text">"We are extremely satisfied and recommend TYNOD's services and support for audits. As usual, they have offered valuable guidance in our endeavour. Thank you for the excellent partnership!"</p>
-                        <div class="testimonial-author">
-                            <div class="author-image">
-                                <img src="https://ui-avatars.com/api/?name=Dr+RK+Patra&background=0066cc&color=fff&size=80" alt="Dr. R.K. Patra">
-                            </div>
-                            <div class="author-info">
-                                <h4>Dr. R.K. Patra</h4>
-                                <p>Medical Director, Healthcare Services</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+    /* ── GAME LOOP ── */
+    function loop() {
+        ctx.clearRect(0,0,W,H);
+        drawBg();
 
-                <!-- Navigation Controls -->
-                <button class="testimonial-nav testimonial-prev" onclick="changeTestimonial(-1)">
-                    <i class="fas fa-chevron-left"></i>
-                </button>
-                <button class="testimonial-nav testimonial-next" onclick="changeTestimonial(1)">
-                    <i class="fas fa-chevron-right"></i>
-                </button>
+        if (state==='running') {
+            frame++;
+            speed = Math.min(2.2 + frame*.0022, 7);
+            score = Math.floor(frame*.13);
+            level = Math.min(10, 1+Math.floor(frame/400));
+            scoreEl.textContent = score;
+            lvEl.textContent    = level;
 
-                <!-- Dot Indicators -->
-                <div class="testimonial-dots">
-                    <span class="testimonial-dot active" onclick="setTestimonial(0)"></span>
-                    <span class="testimonial-dot" onclick="setTestimonial(1)"></span>
-                    <span class="testimonial-dot" onclick="setTestimonial(2)"></span>
-                    <span class="testimonial-dot" onclick="setTestimonial(3)"></span>
-                    <span class="testimonial-dot" onclick="setTestimonial(4)"></span>
-                    <span class="testimonial-dot" onclick="setTestimonial(5)"></span>
-                </div>
-            </div>
-        </div>
-    </section>
+            // spawn
+            const gap = Math.max(45, 110 - speed*9 - level*2);
+            if (frame - lastObs > gap) { spawnObs(); lastObs = frame; }
+            obs.forEach(o => o.x -= speed*3.5);
+            obs = obs.filter(o => o.x+o.w > -20);
+            obs.forEach(drawObs);
 
-    <!-- Contact & Inquiry Section -->
-    <section class="contact" id="contact">
-        <div class="container">
-            <div class="section-header">
-                <span class="section-tag">Get in Touch</span>
-                <h2>Contact Us</h2>
-                <div class="divider"></div>
-            </div>
+            T.update(); P.update();
+            drawJumpFX();
+            P.draw(); T.draw();
 
-            <div class="contact-content">
-                <div class="contact-info">
-                    <h3>Let's Start a Conversation</h3>
-                    <p>Have questions or need expert guidance? Our team is here to help you achieve compliance and excellence.</p>
-                    
-                    <div class="info-items">
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-map-marker-alt"></i>
-                            </div>
-                            <div>
-                                <h4>Our Office</h4>
-                                <p>Plot No. 337, Industrial & Business Park,<br>Phase-2, Chandigarh</p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-envelope"></i>
-                            </div>
-                            <div>
-                                <h4>Email</h4>
-                                <p><a href="mailto:tynod.sales@outlook.com">tynod.sales@outlook.com</a></p>
-                            </div>
-                        </div>
-                        <div class="info-item">
-                            <div class="info-icon">
-                                <i class="fas fa-phone"></i>
-                            </div>
-                            <div>
-                                <h4>Phone</h4>
-                                <p><a href="tel:+919877994815">+91-9877994815</a></p>
-                            </div>
-                        </div>
-                    </div>
+            if (checkHit()) {
+                state = 'dead';
+                spawnDeathFX();
+                if (score > highScore) { highScore=score; localStorage.setItem('pt_hs2',highScore); hsEl.textContent=highScore; }
+                msgEl.textContent = `CAUGHT! Score: ${score}  |  SPACE or Tap to retry`;
+            }
+        } else if (state==='dead') {
+            obs.forEach(drawObs);
+            P.draw(); drawDeathFX();
+            frame++;
+            if (Math.floor(frame/12)%2===0) {
+                ctx.textAlign='center';
+                ctx.shadowBlur=20; ctx.shadowColor='#ff006e';
+                ctx.fillStyle='#ff006e';
+                ctx.font=`bold ${Math.round(W*.055)}px Orbitron,sans-serif`;
+                ctx.fillText('CAUGHT! 🚔', W/2, H/2-15);
+                ctx.shadowBlur=0;
+                ctx.font=`${Math.round(W*.022)}px Rajdhani,sans-serif`;
+                ctx.fillStyle='rgba(0,245,255,.65)';
+                ctx.fillText('PRESS SPACE OR TAP TO RETRY', W/2, H/2+20);
+            }
+        } else {
+            P.draw(); T.draw();
+            ctx.textAlign='center';
+            ctx.shadowBlur=16; ctx.shadowColor='#ffea00';
+            ctx.fillStyle='#ffea00';
+            ctx.font=`bold ${Math.round(W*.032)}px Orbitron,sans-serif`;
+            ctx.fillText('🎮 HELP THE THIEF ESCAPE!', W/2, H/2-14);
+            ctx.shadowBlur=0;
+            ctx.font=`${Math.round(W*.019)}px Rajdhani,sans-serif`;
+            ctx.fillStyle='rgba(0,245,255,.5)';
+            ctx.fillText('SPACE / ↑ to jump  ·  ↓ to duck  ·  Double jump possible!', W/2, H/2+16);
+        }
+        requestAnimationFrame(loop);
+    }
 
-                    <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-linkedin-in"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                    </div>
-                </div>
+    function startGame() {
+        state='running'; frame=0; speed=0; score=0; level=1;
+        scoreEl.textContent='0'; lvEl.textContent='1';
+        obs=[]; lastObs=0; deathFX=[]; jumpFX=[];
+        T.y=GROUND-T.h; T.vy=0; T.onGround=true; T.jumps=0; T.duck=false; T._flash=0;
+        P.x=-70;
+        initBg();
+        msgEl.textContent = "Don't let police catch you! Double jump is allowed.";
+    }
 
-                <div class="inquiry-form" id="inquiry">
-                    <h3>Post your Inquiry</h3>
-                    <form id="contactForm">
-                        <!-- Web3Forms Hidden Fields -->
-                        <input type="hidden" name="access_key" value="a9ca2fa9-f12e-4358-ab5c-9842c668afb6">
-                        <input type="hidden" name="subject" value="New Inquiry from TYNOD Website">
-                        <input type="hidden" name="from_name" value="TYNOD Website">
-                        <input type="checkbox" name="botcheck" class="hidden" style="display: none;">
+    function handleJump() {
+        if (state==='idle'||state==='dead') startGame();
+        else if (state==='running') T.jump();
+    }
 
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="text" id="name" name="name" required>
-                                <label for="name">Your Name</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="email" id="email" name="email" required>
-                                <label for="email">Email Address</label>
-                            </div>
-                        </div>
-                        <div class="form-row">
-                            <div class="form-group">
-                                <input type="tel" id="phone" name="phone" required>
-                                <label for="phone">Phone Number</label>
-                            </div>
-                            <div class="form-group">
-                                <input type="text" id="company" name="company">
-                                <label for="company">Company Name</label>
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <select id="service" name="service" required>
-                                <option value="">Select Service</option>
-                                <option value="certifications">Management Systems Certifications</option>
-                                <option value="training">Management Systems Trainings</option>
-                                <option value="analysis">Industrial Analysis</option>
-                                <option value="technical">Project Technical Assistance</option>
-                                <option value="inspection">Industrial Product Inspection</option>
-                                <option value="auditing">Management System Auditing</option>
-                                <option value="consulting">Business Management Consulting</option>
-                            </select>
-                            <label for="service">Service Interested In</label>
-                        </div>
-                        <div class="form-group">
-                            <textarea id="message" name="message" rows="5" required></textarea>
-                            <label for="message">Your Message</label>
-                        </div>
-                        <button type="submit" class="btn btn-primary" id="submitBtn">
-                            <span>Send Inquiry</span>
-                            <i class="fas fa-paper-plane"></i>
-                        </button>
-                        <div id="formStatus" class="form-status"></div>
-                    </form>
-                </div>
-            </div>
-        </div>
-    </section>
+    let duckActive=false;
+    document.addEventListener('keydown', e => {
+        if (e.code==='Space'||e.code==='ArrowUp') { e.preventDefault(); handleJump(); }
+        if (e.code==='ArrowDown') { e.preventDefault(); if(!duckActive){T.setDuck(true);duckActive=true;} }
+    });
+    document.addEventListener('keyup', e => {
+        if (e.code==='ArrowDown') { T.setDuck(false); duckActive=false; }
+    });
+    canvas.addEventListener('click', handleJump);
+    canvas.addEventListener('touchstart', e => { e.preventDefault(); handleJump(); }, {passive:false});
+    let tsY=0;
+    canvas.addEventListener('touchstart', e => { tsY=e.touches[0].clientY; }, {passive:true});
+    canvas.addEventListener('touchend', e => {
+        if (e.changedTouches[0].clientY - tsY > 30) { T.setDuck(true); setTimeout(()=>T.setDuck(false), 500); }
+    }, {passive:true});
 
-   
-
-    <!-- Consulting Services Modal -->
-    <div class="modal" id="consultingModal">
-        <div class="modal-content modal-lg">
-            <span class="close-modal" onclick="closeConsultingModal()">&times;</span>
-            <div class="modal-header">
-                <div class="service-icon-sm">
-                    <i class="fas fa-certificate"></i>
-                </div>
-                <h3>Management Systems Certifications</h3>
-            </div>
-            <p class="modal-intro">We offer a wide range of management systems certifications aligned with globally recognized standards.</p>
-            <div class="modal-body-scroll">
-                <ul class="service-list-grid">
-                    <li><i class="fas fa-check"></i> Occupational Health and Safety</li>
-                    <li><i class="fas fa-check"></i> Environmental Management</li>
-                    <li><i class="fas fa-check"></i> Food Safety Certification</li>
-                    <li><i class="fas fa-check"></i> Quality Management</li>
-                    <li><i class="fas fa-check"></i> Information Security</li>
-                    <li><i class="fas fa-check"></i> Sustainability / ESG Reporting</li>
-                    <li><i class="fas fa-check"></i> Sedex</li>
-                    <li><i class="fas fa-check"></i> Customer Satisfaction</li>
-                    <li><i class="fas fa-check"></i> Education</li>
-                    <li><i class="fas fa-check"></i> Facility Management</li>
-                    <li><i class="fas fa-check"></i> Anti-bribery</li>
-                    <li><i class="fas fa-check"></i> Social Accountability</li>
-                    <li><i class="fas fa-check"></i> BRSR Reporting / CBAM Studies</li>
-                    <li><i class="fas fa-check"></i> USFDA</li>
-                    <li><i class="fas fa-check"></i> Health Care Management</li>
-                    <li><i class="fas fa-check"></i> CE Marking</li>
-                    <li><i class="fas fa-check"></i> NABH (for Hospitals)</li>
-                    <li><i class="fas fa-check"></i> Medical Devices Management System</li>
-                    <li><i class="fas fa-check"></i> Automotive</li>
-                    <li><i class="fas fa-check"></i> GMP</li>
-                    <li><i class="fas fa-check"></i> Energy Management</li>
-                    <li><i class="fas fa-check"></i> HACCP</li>
-                    <li><i class="fas fa-check"></i> NABL (for Laboratories)</li>
-                    <li><i class="fas fa-check"></i> Greenhouse Gas Emissions</li>
-                    <li><i class="fas fa-check"></i> Compliance Management</li>
-                    <li><i class="fas fa-check"></i> Road Traffic Safety</li>
-                    <li><i class="fas fa-check"></i> Asset Management</li>
-                    <li><i class="fas fa-check"></i> Event Sustainability</li>
-                    <li><i class="fas fa-check"></i> Security Management Supply Chain</li>
-                    <li><i class="fas fa-check"></i> Sustainable Community Development</li>
-                    <li><i class="fas fa-check"></i> Risk Management</li>
-                    <li><i class="fas fa-check"></i> Aerospace</li>
-                    <li><i class="fas fa-check"></i> ZED Certification</li>
-                    <li><i class="fas fa-check"></i> Business Continuity Management</li>
-                    <li><i class="fas fa-check"></i> WRAP</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-col">
-                    <div class="footer-logo">
-                        <img src="assets/tynodlogo.jpeg" alt="TYNOD Logo">
-                        <span>TYNOD</span>
-                    </div>
-                    <p class="footer-tagline">Elevating Businesses. Empowering Growth</p>
-                    <p>Your distinguished partner in management systems certification and strategic business solutions.</p>
-                </div>
-                <div class="footer-col">
-                    <h4>Quick Links</h4>
-                    <ul>
-                        <li><a href="#about">The Essence of TYNOD</a></li>
-                        <li><a href="professionaldomain.html">Professional Domain</a></li>
-                        <li><a href="#advantage">TYNOD Advantage</a></li>
-                        <li><a href="#values">Core Values</a></li>
-                        <li><a href="#contact">Contact</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Our Expertise</h4>
-                    <ul>
-                        <li><a href="#advantage">Certifications</a></li>
-                        <li><a href="#advantage">Trainings</a></li>
-                        <li><a href="#advantage">Industrial Analysis</a></li>
-                        <li><a href="#advantage">Technical Assistance</a></li>
-                        <li><a href="#advantage">Product Inspection</a></li>
-                        <li><a href="#advantage">Auditing</a></li>
-                        <li><a href="#advantage">Consulting</a></li>
-                    </ul>
-                </div>
-                <div class="footer-col">
-                    <h4>Contact Info</h4>
-                    <ul class="contact-list">
-                        <li><i class="fas fa-map-marker-alt"></i> Chandigarh, India</li>
-                        <li><i class="fas fa-phone"></i> +91-9877994815</li>
-                        <li><i class="fas fa-envelope"></i> tynod.sales@outlook.com</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="footer-bottom">
-                <p>&copy; 2025 TYNOD. All rights reserved.</p>
-                <div class="footer-social">
-                    <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
-                </div>
-            </div>
-        </div>
-    </footer>
-
-    <!-- Scroll to Top Button -->
-    <button class="scroll-top" id="scrollTop">
-        <i class="fas fa-arrow-up"></i>
-    </button>
-
-    <script src="script.js"></script>
+    /* init */
+    T.y = GROUND - T.h; P.x = -70;
+    initBg();
+    loop();
+})();
+</script>
 </body>
 </html>
